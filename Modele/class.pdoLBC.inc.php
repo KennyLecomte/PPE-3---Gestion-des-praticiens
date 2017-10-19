@@ -3,7 +3,7 @@
 class PdoLBC
 {   		
       	private static $serveur='mysql:host=localhost';
-      	private static $bdd='dbname=LBC';   		
+      	private static $bdd='dbname=lbc';   		
       	private static $user='root' ;    		
       	private static $mdp='' ;	
 		private static $monPdo;
@@ -25,6 +25,15 @@ class PdoLBC
 			PdoLBC::$monPdoLBC= new PdoLBC();
 		}
 		return PdoLBC::$monPdoLBC;  
+	}
+
+	public function ajouterPraticien($nom, $prenom, $ville, $adresse, $cp, $notoriete, $lieuAct)
+	{
+		var_dump($ville);
+		$req="INSERT INTO praticien(nom, prenom, ville, adresse, cp, notoriete, lieuAct) VALUES('$nom','$prenom','$ville', '$adresse', '$cp', '$notoriete', '$lieuAct')";
+		echo $req;
+		$res = PdoLBC::$monPdo->exec($req);
+		
 	}
 }
 ?>
