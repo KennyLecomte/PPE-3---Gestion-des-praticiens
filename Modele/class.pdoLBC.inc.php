@@ -29,7 +29,6 @@ class PdoLBC
 
 	public function ajouterPraticien($nom, $prenom, $ville, $adresse, $cp, $notoriete, $lieuAct)
 	{
-		var_dump($ville);
 		$req="INSERT INTO praticien(nom, prenom, ville, adresse, cp, notoriete, lieuAct) VALUES('$nom','$prenom','$ville', '$adresse', '$cp', '$notoriete', '$lieuAct')";
 		echo $req;
 		$res = PdoLBC::$monPdo->exec($req);
@@ -57,6 +56,13 @@ class PdoLBC
 		$res = PdoLBC::$monPdo->query($req);
 		$lesLignes = $res->fetch();
 		return $lesLignes;
+	}
+
+	public function ajoutVisiteur($matricule,$nom,$prenom,$adresse,$ville,$cp,$dateEmbauche,$mdp)
+	{
+		$req="INSERT INTO visiteur(matriculeVisiteur, prenomVisiteur, adresseVisiteur, cpVisiteur, villeVisiteur, dateEmbaucheVisiteur, loginVisiteur) VALUES('$nom','$prenom','$ville', '$adresse', '$cp', '$notoriete', '$lieuAct')";
+		echo $req;
+		$res = PdoLBC::$monPdo->exec($req);
 	}
 }
 ?>

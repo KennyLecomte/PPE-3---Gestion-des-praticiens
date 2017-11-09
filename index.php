@@ -27,7 +27,12 @@ switch($uc)
 		{include("Controlleurs/c_Connexion.php");break;}
 	case 'deconnexion' :
 		{include("Controlleurs/c_Deconnexion.php");break;}
+
 	case 'ajoutVisite' :
 		{include("Controlleurs/c_Visite.php");break;}
+
+	case 'inscription' :
+		{ include("Controlleurs/c_Inscription.php");break; }
+
 }
-?>
+?> 
