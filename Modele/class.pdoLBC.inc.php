@@ -33,7 +33,30 @@ class PdoLBC
 		$req="INSERT INTO praticien(nom, prenom, ville, adresse, cp, notoriete, lieuAct) VALUES('$nom','$prenom','$ville', '$adresse', '$cp', '$notoriete', '$lieuAct')";
 		echo $req;
 		$res = PdoLBC::$monPdo->exec($req);
-		
+	}
+
+	public function getIdVisiteur($login)
+	{
+		$req = "SELECT * FROM visiteur WHERE loginVisiteur='$login'";
+		$res = PdoLBC::$monPdo->query($req);
+		$lesLignes = $res->fetch();
+		return $lesLignes;
+	}
+
+	public function getMdpVisiteur($id)
+	{
+		$req = "SELECT mdpVisiteur FROM nonresponsable WHERE matriculeVisiteur='$id'";
+		$res = PdoLBC::$monPdo->query($req);
+		$lesLignes = $res->fetch();
+		return $lesLignes;
+	}
+
+	public function getMdpResponsable($id)
+	{
+		$req = "SELECT mdpResponsable FROM responsable WHERE matriculeVisiteur='$id'";
+		$res = PdoLBC::$monPdo->query($req);
+		$lesLignes = $res->fetch();
+		return $lesLignes;
 	}
 }
 ?>
