@@ -1,4 +1,4 @@
-<form action="index.php?uc=connexion" method="post">
+<form action="index.php?uc=ajoutVisite&action=formulaireVisite" method="post">
 	<input type="text" placeholder="Login" name="loginConnexion">
 	<input type="password" placeholder="Mot de passe" name="mdpConnexion">
 	<input type="submit" value ="Se connecter">

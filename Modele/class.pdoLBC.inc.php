@@ -30,7 +30,7 @@ class PdoLBC
 	public function ajouterPraticien($idRegion, $nomPraticien, $prenomPraticien, $villePraticien, $adressePraticien, $cpPraticien, $notorietePraticien)
 	{
 	var_dump($idRegion);
-var_dump($nomPraticien);
+	var_dump($nomPraticien);
 var_dump($prenomPraticien);
 var_dump($villePraticien);
 var_dump($adressePraticien);
@@ -39,9 +39,39 @@ var_dump($notorietePraticien);
 		
 
 		$req="INSERT INTO praticien(IDREGION, NOMPRATICIEN, PRENOMPRATICIEN, ADRESSEPRATICIEN, CPPRATICIEN, VILLEPRATICIEN, COEFFICIENTNOTORIETEPRATICIEN) VALUES('$idRegion', '$nomPraticien','$prenomPraticien','$adressePraticien', '$cpPraticien','$villePraticien', '$notorietePraticien')";
-		echo $req ;
+		echo $req;
 		$res = PdoLBC::$monPdo->exec($req);
-		
+	}
+
+	public function getIdVisiteur($login)
+	{
+		$req = "SELECT * FROM visiteur WHERE loginVisiteur='$login'";
+		$res = PdoLBC::$monPdo->query($req);
+		$lesLignes = $res->fetch();
+		return $lesLignes;
+	}
+
+	public function getMdpVisiteur($id)
+	{
+		$req = "SELECT mdpVisiteur FROM nonresponsable WHERE matriculeVisiteur='$id'";
+		$res = PdoLBC::$monPdo->query($req);
+		$lesLignes = $res->fetch();
+		return $lesLignes;
+	}
+
+	public function getMdpResponsable($id)
+	{
+		$req = "SELECT mdpResponsable FROM responsable WHERE matriculeVisiteur='$id'";
+		$res = PdoLBC::$monPdo->query($req);
+		$lesLignes = $res->fetch();
+		return $lesLignes;
+	}
+
+	public function ajoutVisiteur($matricule,$nom,$prenom,$adresse,$ville,$cp,$dateEmbauche,$mdp)
+	{
+		$req="INSERT INTO visiteur(matriculeVisiteur, prenomVisiteur, adresseVisiteur, cpVisiteur, villeVisiteur, dateEmbaucheVisiteur, loginVisiteur) VALUES('$nom','$prenom','$ville', '$adresse', '$cp', '$notoriete', '$lieuAct')";
+		echo $req;
+		$res = PdoLBC::$monPdo->exec($req);
 	}
 
 	 public function getRegion()

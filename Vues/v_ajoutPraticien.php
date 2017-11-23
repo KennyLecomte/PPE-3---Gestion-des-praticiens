@@ -1,4 +1,4 @@
-<div id="divAjoutPraticien">
+
 	<form action="index.php?uc=praticien&action=ajouterPraticien" method="post">
 	
 
@@ -31,4 +31,4 @@
 		<input type="text" placeholder="notoriete" name="notorietePraticien" class="formAjoutPraticien">
 		<input type="submit" value ="ajouter">
 	</form>
-</div>
+
