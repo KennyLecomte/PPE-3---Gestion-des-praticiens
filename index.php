@@ -11,8 +11,10 @@ $pdo = PdoLBC::getPdoLBC();
 switch($uc)
 {
 	case 'accueil':
-		{include("vues/v_ajoutPraticien.php");break;}
+		{
+			$reponse=$pdo->getRegion(); // avant d'afficher la vue du formulaire
+			include("vues/v_ajoutPraticien.php");break;}
 	case 'praticien' :
-		{include("Controlleurs/c_Connexion.php");break;}
+		{include("Controlleurs/c_Praticien.php");break;}
 }
 ?>

@@ -27,13 +27,28 @@ class PdoLBC
 		return PdoLBC::$monPdoLBC;  
 	}
 
-	public function ajouterPraticien($nom, $prenom, $ville, $adresse, $cp, $notoriete, $lieuAct)
+	public function ajouterPraticien($idRegion, $nomPraticien, $prenomPraticien, $villePraticien, $adressePraticien, $cpPraticien, $notorietePraticien)
 	{
-		var_dump($ville);
-		$req="INSERT INTO praticien(nom, prenom, ville, adresse, cp, notoriete, lieuAct) VALUES('$nom','$prenom','$ville', '$adresse', '$cp', '$notoriete', '$lieuAct')";
-		echo $req;
+	var_dump($idRegion);
+var_dump($nomPraticien);
+var_dump($prenomPraticien);
+var_dump($villePraticien);
+var_dump($adressePraticien);
+var_dump($cpPraticien);
+var_dump($notorietePraticien);
+		
+
+		$req="INSERT INTO praticien(IDREGION, NOMPRATICIEN, PRENOMPRATICIEN, ADRESSEPRATICIEN, CPPRATICIEN, VILLEPRATICIEN, COEFFICIENTNOTORIETEPRATICIEN) VALUES('$idRegion', '$nomPraticien','$prenomPraticien','$adressePraticien', '$cpPraticien','$villePraticien', '$notorietePraticien')";
+		echo $req ;
 		$res = PdoLBC::$monPdo->exec($req);
 		
 	}
+
+	 public function getRegion()
+  	{
+	    $req = "SELECT * FROM region";
+	    $res = PdoLBC::$monPdo->query($req);
+	    return $res;
+ 	}
 }
 ?>
