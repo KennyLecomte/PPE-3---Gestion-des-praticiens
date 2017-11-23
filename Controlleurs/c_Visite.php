@@ -21,15 +21,14 @@ switch($action)
 	  	$dateVisite=$_POST['dateVisite'];
 	  	$bilanVisite=$_POST['bilanVisite'];
 	  	$motifVisite=$_POST['motifVisite'];
-		$loginVisiteur=$_SESSION['loginConnexion'];
+		$loginVisiteur=$_SESSION['loginVisiteur'];
 
 		$Visiteur=$pdo->getIdVisiteur($loginVisiteur);
 		$IdVisiteur=$Visiteur['MATRICULEVISITEUR'];
 
 		var_dump($IdVisiteur);
-		var_dump($Visiteur);
-		/*$pdo->getSallesAvecNom($idPraticien, $matriculeVisiteur, $dateVisite, $bilanVisite, $motifVisite);
-		include("vues/index.php?uc=accueil");*/
+		$pdo->getSallesAvecNom($idPraticien, $matriculeVisiteur, $dateVisite, $bilanVisite, $motifVisite);
+		include("vues/index.php?uc=accueil");
 		break;
 	}
 }
