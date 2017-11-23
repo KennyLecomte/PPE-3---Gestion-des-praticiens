@@ -8,8 +8,15 @@
 		$action=NULL;
 	}
 
-var_dump($action);
+
 	switch ($action) {
+		case 'vueAjouterPraticien':
+		{
+			$reponse=$pdo->getRegion();
+			include("vues/v_ajoutPraticien.php");
+			break;
+		}
+
 		case 'ajouterPraticien':
 		{
 			$idRegion=$_POST["idRegion"];
@@ -24,6 +31,8 @@ var_dump($action);
 			$pdo->ajouterPraticien($idRegion, $nomPraticien, $prenomPraticien, $villePraticien, $adressePraticien, $cpPraticien, $notorietePraticien);
 			break;
 		}
+
+
 	
 	}
 ?>

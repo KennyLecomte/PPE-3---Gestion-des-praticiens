@@ -33,6 +33,9 @@ switch($uc)
 		{include("Controlleurs/c_Visite.php");break;}
 	case 'inscription' :
 		{ include("Controlleurs/c_Inscription.php");break; }
+	case 'affectation' :
+		{ include("Controlleurs/c_Affectation.php");break; }
+
 
 
 }

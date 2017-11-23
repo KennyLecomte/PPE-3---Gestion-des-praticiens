@@ -74,11 +74,31 @@ var_dump($notorietePraticien);
 		$res = PdoLBC::$monPdo->exec($req);
 	}
 
-	 public function getRegion()
+	public function getRegion()
   	{
 	    $req = "SELECT * FROM region";
 	    $res = PdoLBC::$monPdo->query($req);
 	    return $res;
+ 	}
+
+ 	public function getPraticien()
+  	{
+	    $req = "SELECT * FROM praticien";
+	    $res = PdoLBC::$monPdo->query($req);
+	    return $res;
+ 	}
+
+ 	public function getVisiteur()
+  	{
+	    $req = "SELECT * FROM visiteur";
+	    $res = PdoLBC::$monPdo->query($req);
+	    return $res;
+ 	}
+
+ 	public function ajouterAffectation($idPratiien, $idVisiteur){
+ 		$req="INSERT INTO attribuer(IDPRATICIEN, MATRICULEVISITEUR) VALUES('$idPraticien','$idVisteur')";
+		echo $req;
+		$res = PdoLBC::$monPdo->exec($req);
  	}
 }
 ?>
