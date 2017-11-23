@@ -67,9 +67,17 @@ var_dump($notorietePraticien);
 		return $lesLignes;
 	}
 
-	public function ajoutVisiteur($matricule,$nom,$prenom,$adresse,$ville,$cp,$dateEmbauche,$mdp)
+	public function getPraticiensVisiteur($id)
 	{
-		$req="INSERT INTO visiteur(matriculeVisiteur, prenomVisiteur, adresseVisiteur, cpVisiteur, villeVisiteur, dateEmbaucheVisiteur, loginVisiteur) VALUES('$nom','$prenom','$ville', '$adresse', '$cp', '$notoriete', '$lieuAct')";
+		$req = "SELECT NOMPRATICIEN, PRENOMPRATICIEN, praticien.idPraticien as 'IDPRATICIEN' FROM praticien, attribuer WHERE attribuer.idPraticien=praticien.idPraticien AND attribuer.matriculeVisiteur='$id'";
+		$res = PdoLBC::$monPdo->query($req);
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+	}
+
+	public function ajouterVisiteur($matricule,$nom,$prenom,$adresse,$ville,$cp,$dateEmbauche,$login)
+	{
+		$req="INSERT INTO visiteur(matriculeVisiteur, nomVisiteur, prenomVisiteur, adresseVisiteur, cpVisiteur, villeVisiteur, dateEmbaucheVisiteur, loginVisiteur) VALUES('$matricule','$nom','$prenom', '$adresse', '$cp', '$ville', '$dateEmbauche','$login')";
 		echo $req;
 		$res = PdoLBC::$monPdo->exec($req);
 	}

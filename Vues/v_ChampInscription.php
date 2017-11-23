@@ -26,11 +26,11 @@
 </p>
 <p>
 	<label>Date embauche</label>
-	<input type="text" name="dateEmbaucheVisiteur">
+	<input type="date" name="dateEmbaucheVisiteur">
 </p>
 <p>
 	<label>Mot de passe</label>
-	<input type="text" name="mdpVisiteur">
+	<input type="password" name="mdpVisiteur">
 </p>
 <input type="submit" name="Valider">
 </form>

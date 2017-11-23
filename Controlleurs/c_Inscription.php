@@ -19,8 +19,9 @@ switch ($action) {
 		$cpVisiteur=$_POST['cpVisiteur'];
 		$dateEmbaucheVisiteur=$_POST['dateEmbaucheVisiteur'];
 		$mdpVisiteur=$_POST['mdpVisiteur'];
+		$loginVisiteur='test';
 
-		$pdo->ajouterVisiteur($matriculeVisiteur,$nomVisiteur,$prenomVisiteur,$adresseVisiteur,$villeVisiteur,$cpVisiteur,$dateEmbaucheVisiteur,$mdp);
+		$pdo->ajouterVisiteur($matriculeVisiteur,$nomVisiteur,$prenomVisiteur,$adresseVisiteur,$villeVisiteur,$cpVisiteur,$dateEmbaucheVisiteur,$loginVisiteur);
 
 		header('Location: index.php?uc=accueil');	
 		break;

@@ -32,12 +32,14 @@ if($mdp==$mdpVisiteur)
 	$_SESSION['idVisiteur']=$leVisiteur['MATRICULEVISITEUR'];
 	$_SESSION['nomVisiteur']=$leVisiteur['NOMVISITEUR'];
 	$_SESSION['prenomVisiteur']=$leVisiteur['PRENOMVISITEUR'];
+	$_SESSION['loginVisiteur']=$leVisiteur['LOGINVISITEUR'];
 }
 else if($mdp==$mdpResponsable)
 {
 	$_SESSION['idVisiteur']=$leVisiteur['MATRICULEVISITEUR'];
 	$_SESSION['nomVisiteur']=$leVisiteur['NOMVISITEUR'];
 	$_SESSION['prenomVisiteur']=$leVisiteur['PRENOMVISITEUR'];
+	$_SESSION['loginVisiteur']=$leVisiteur['LOGINVISITEUR'];
 }
 
 header('Location: index.php?uc=accueil');	
