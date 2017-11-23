@@ -13,19 +13,24 @@ switch($action)
 		include("vues/v_formulaireCompte.php");
 	  	break;
 	}
-	/*case 'confirmCreationClient':
+	
+	case 'confirmerVisite':
 	{
-		$prenom = $_REQUEST['prenom'];
-		$nom = $_REQUEST['nom'];
-		$adresse = $_REQUEST['adresse'];
-		$telephone = $_REQUEST['telephone'];
-		$ville = $_REQUEST['ville'];
-		$login = $_REQUEST['login'];
-		$mdp = $_REQUEST['motdepasse'];
-		$requeteClient = $pdo->creerClient($prenom, $nom, $telephone, $adresse, $ville, $login, $mdp);
-		header("Location: index.php?uc=gererCompte&action=choixCompte");
-	  	break;
 
-	}*/
+	  	$idPraticien=$_POST['idPraticien'];
+	  	$dateVisite=$_POST['dateVisite'];
+	  	$bilanVisite=$_POST['bilanVisite'];
+	  	$motifVisite=$_POST['motifVisite'];
+		$loginVisiteur=$_SESSION['loginConnexion'];
+
+		$Visiteur=$pdo->getIdVisiteur($loginVisiteur);
+		$IdVisiteur=$Visiteur['MATRICULEVISITEUR'];
+
+		var_dump($IdVisiteur);
+		var_dump($Visiteur);
+		/*$pdo->getSallesAvecNom($idPraticien, $matriculeVisiteur, $dateVisite, $bilanVisite, $motifVisite);
+		include("vues/index.php?uc=accueil");*/
+		break;
+	}
 }
 ?>

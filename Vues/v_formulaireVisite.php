@@ -1,7 +1,9 @@
-<form action="index.php?uc=ajoutVisite&action=formulaireVisite" method="post">
-	<input type="text" placeholder="Login" name="loginConnexion">
-	<input type="password" placeholder="Mot de passe" name="mdpConnexion">
-	<input type="submit" value ="Se connecter">
-</form>
+<form action="index.php?uc=ajoutVisite&action=confirmerVisite" method="post">
 
-<a href="index.php?uc=inscription&action=inscription" class="inscription"> Inscription </a>
+	 <!--faire une liste déroulante pour le Praticien-->
+	<input type="date" placeholder="Date de Visite" name="dateVisite"><br>
+	<input class="grandInput" type="text" placeholder="Bilan de visite" name="bilanVisite"><br>
+	<input class="grandInput" type="text" placeholder="Motif de la visite" name="motifVisite"><br>
+	<input type="submit" value ="Se connecter">
+
+</form>

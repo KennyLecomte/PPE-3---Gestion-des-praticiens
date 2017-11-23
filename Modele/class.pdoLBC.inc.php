@@ -82,8 +82,8 @@ var_dump($notorietePraticien);
 		$res = PdoLBC::$monPdo->exec($req);
 	}
 
-	public function getRegion()
-  	{
+	public function ajoutVisite($idPraticien,$matriculeVisiteur,$dateVisite,$bilanVisite,$motifVisite)
+	{
 	    $req = "SELECT * FROM region";
 	    $res = PdoLBC::$monPdo->query($req);
 	    return $res;
@@ -104,9 +104,22 @@ var_dump($notorietePraticien);
  	}
 
  	public function ajouterAffectation($idPratiien, $idVisiteur){
- 		$req="INSERT INTO attribuer(IDPRATICIEN, MATRICULEVISITEUR) VALUES('$idPraticien','$idVisteur')";
+		$req="INSERT INTO visiteur(IDPRATICIEN, MATRICULEVISITEUR, DATEVISITE, BILANVISITE, MOTIFVISITE) VALUES('$idPraticien','$matriculeVisiteur','$dateVisite', '$bilanVisite', '$motifVisite')";
+		$res = PdoLBC::$monPdo->exec($req);
+	}
+
+	public function getRegion()
+  	{
+	    $req = "SELECT * FROM region";
+	    $res = PdoLBC::$monPdo->query($req);
+	    return $res;
+ 	}
+
+ 	public function ajoutVisiteur($matricule,$nom,$prenom,$adresse,$ville,$cp,$dateEmbauche,$mdp)
+	{
+		$req="INSERT INTO visiteur(matriculeVisiteur, prenomVisiteur, adresseVisiteur, cpVisiteur, villeVisiteur, dateEmbaucheVisiteur, loginVisiteur) VALUES('$nom','$prenom','$ville', '$adresse', '$cp', '$notoriete', '$lieuAct')";
 		echo $req;
 		$res = PdoLBC::$monPdo->exec($req);
- 	}
+	}
 }
 ?>
