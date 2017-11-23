@@ -16,8 +16,10 @@ switch ($action) {
 			break;
 		}
 
-		case 'confirmAjouterAffectation':
+		case 'ajouterAffectation':
 		{
+			$idPraticien = $_POST["idPraticien"];
+			$idVisiteur = $_POST["idVisiteur"];
 			$pdo->ajouterAffectation($idPraticien,$idVisiteur);
 			break;
 		}

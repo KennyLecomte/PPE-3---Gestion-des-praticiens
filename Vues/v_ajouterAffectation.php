@@ -20,7 +20,7 @@
       {
         while ($ligne) 
         {
-           	echo '<option selected value = "' . $ligne["IDVISITEUR"] . '">' . $ligne["NOMVISITEUR"] . " " . $ligne["PRENOMVISITEUR"] . '</option>';
+           	echo '<option selected value = "' . $ligne["MATRICULEVISITEUR"] . '">' . $ligne["NOMVISITEUR"] . " " . $ligne["PRENOMVISITEUR"] . '</option>';
             $ligne = $visiteur->fetch();
         }
       }
