@@ -20,3 +20,5 @@
     ?>
 </table>
 
+<a href="index.php?uc=gestionPraticiens&action=ajoutPraticienVisiteur">Ajouter un praticien</a>
+

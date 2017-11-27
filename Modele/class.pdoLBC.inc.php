@@ -84,9 +84,8 @@ var_dump($notorietePraticien);
 
 	public function ajoutVisite($idPraticien,$matriculeVisiteur,$dateVisite,$bilanVisite,$motifVisite)
 	{
-	    $req = "SELECT * FROM region";
-	    $res = PdoLBC::$monPdo->query($req);
-	    return $res;
+	   	$req="INSERT INTO visite(IDPRATICIEN, MATRICULEVISITEUR, DATEVISITE, BILANVISITE, MOTIFVISITE) VALUES('$idPraticien','$matriculeVisiteur','$dateVisite', '$bilanVisite', '$motifVisite')";
+		$res = PdoLBC::$monPdo->exec($req);
  	}
 
  	public function getPraticien()
@@ -103,8 +102,9 @@ var_dump($notorietePraticien);
 	    return $res;
  	}
 
- 	public function ajouterAffectation($idPratiien, $idVisiteur){
-		$req="INSERT INTO visiteur(IDPRATICIEN, MATRICULEVISITEUR, DATEVISITE, BILANVISITE, MOTIFVISITE) VALUES('$idPraticien','$matriculeVisiteur','$dateVisite', '$bilanVisite', '$motifVisite')";
+ 	public function ajouterAffectation($idPraticien, $idVisiteur){
+		$req="INSERT INTO attribuer(IDPRATICIEN, MATRICULEVISITEUR) VALUES('$idPraticien','$idVisiteur')";
+		echo $req;
 		$res = PdoLBC::$monPdo->exec($req);
 	}
 
