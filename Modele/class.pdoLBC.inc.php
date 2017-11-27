@@ -104,8 +104,13 @@ var_dump($notorietePraticien);
 
  	public function ajouterAffectation($idPraticien, $idVisiteur){
 		$req="INSERT INTO attribuer(IDPRATICIEN, MATRICULEVISITEUR) VALUES('$idPraticien','$idVisiteur')";
-		echo $req;
 		$res = PdoLBC::$monPdo->exec($req);
+	}
+
+	public function getAffectations(){
+		$req = "SELECT * FROM attribuer";
+		$res = PdoLBC::$monPdo->query($req);
+		return $res;
 	}
 
 	public function getRegion()

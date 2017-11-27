@@ -24,4 +24,11 @@ switch ($action) {
 			break;
 		}
 
+		case 'voirAffectation':
+		{
+			$affectations=$pdo->getAffectations();
+			include("vues/v_voirAffectation.php");
+			break;
+		}
+
 	}
