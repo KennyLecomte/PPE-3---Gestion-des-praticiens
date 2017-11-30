@@ -33,6 +33,7 @@ if($mdp==$mdpVisiteur)
 	$_SESSION['nomVisiteur']=$leVisiteur['NOMVISITEUR'];
 	$_SESSION['prenomVisiteur']=$leVisiteur['PRENOMVISITEUR'];
 	$_SESSION['loginVisiteur']=$leVisiteur['LOGINVISITEUR'];
+	$_SESSION['typeVisiteur']="Visiteur";
 }
 else if($mdp==$mdpResponsable)
 {
@@ -40,6 +41,7 @@ else if($mdp==$mdpResponsable)
 	$_SESSION['nomVisiteur']=$leVisiteur['NOMVISITEUR'];
 	$_SESSION['prenomVisiteur']=$leVisiteur['PRENOMVISITEUR'];
 	$_SESSION['loginVisiteur']=$leVisiteur['LOGINVISITEUR'];
+	$_SESSION['typeVisiteur']="Responsable";
 }
 
 header('Location: index.php?uc=accueil');	

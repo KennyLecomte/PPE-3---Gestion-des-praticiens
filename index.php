@@ -18,6 +18,18 @@ else
 	include("vues/v_InformationsConnexion.php");
 }
 
+if(isset($_SESSION['idVisiteur']))
+{
+	if($_SESSION['typeVisiteur']=="Visiteur")
+	{
+		include("Vues/v_visiteur.php");
+	}
+	elseif ($_SESSION['typeVisiteur']=="Responsable") 
+	{
+		include("Vues/v_responsable.php");
+	}
+}
+
 $pdo = PdoLBC::getPdoLBC();	 
 switch($uc)
 {

@@ -5,6 +5,4 @@
 </form>
 
 <a href="index.php?uc=inscription&action=inscription" class="inscription"> Inscription </a>
-<a href="index.php?uc=praticien&action=vueAjouterPraticien" class="inscription"> Ajouter un praticien</a>
-<a href="index.php?uc=affectation&action=vueAjouterAffectation" class="inscription"> Ajouter une affectation</a>
-<a href="index.php?uc=affectation&action=voirAffectation" class="inscription">Voir affectation</a>
+

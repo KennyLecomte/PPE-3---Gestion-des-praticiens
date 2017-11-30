@@ -10,9 +10,14 @@
 switch ($action) {
 		case 'vueAjouterAffectation':
 		{
-			$praticien=$pdo->getPraticien();
-			$visiteur=$pdo->getVisiteur();
-			include("vues/v_ajouterAffectation.php");
+			var_dump($_SESSION['typeVisiteur']);
+			if($_SESSION['typeVisiteur']=="Responsable")
+			{
+				$praticien=$pdo->getPraticien();
+				$visiteur=$pdo->getVisiteur();
+				include("vues/v_ajouterAffectation.php");
+			}
+
 			break;
 		}
 
@@ -32,9 +37,18 @@ switch ($action) {
 		}
 
 		case 'supprimerAffectation':
-		{
-			include("vues/v_Accueil.php");
+
+		{	
+			$idVisiteur=$_REQUEST['idVisiteur'];
+			$idPraticien=$_REQUEST['idPraticien'];
+			var_dump($idPraticien);
+			var_dump($idVisiteur);
+			$pdo->supprimerPraticienVisiteur($idVisiteur,$idPraticien);
+			header('Location: index.php?uc=affectation&action=voirAffectation');
 			break;
 		}
+
+
+
 
 	}
