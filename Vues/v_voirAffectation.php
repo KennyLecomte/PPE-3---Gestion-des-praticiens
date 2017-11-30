@@ -4,8 +4,8 @@
 	 	
 	 	?>
    <tr>
-       <td><?php echo $uneLigne["IDPRATICIEN"] ?></td>
-       <td><?php echo $uneLigne["MATRICULEVISITEUR"]?></td>
+       <td><?php echo $uneLigne["NOMPRATICIEN"] . " " . $uneLigne["PRENOMPRATICIEN"] ?></td>
+       <td><?php echo $uneLigne["PRENOMVISITEUR"] . " " . $uneLigne["PRENOMVISITEUR"]?></td>
        
    </tr>
 	<?php 
