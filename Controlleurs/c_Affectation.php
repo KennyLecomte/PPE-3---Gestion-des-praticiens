@@ -31,4 +31,10 @@ switch ($action) {
 			break;
 		}
 
+		case 'supprimerAffectation':
+		{
+			include("vues/v_Accueil.php");
+			break;
+		}
+
 	}

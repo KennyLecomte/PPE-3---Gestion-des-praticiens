@@ -128,5 +128,7 @@ var_dump($notorietePraticien);
 		echo $req;
 		$res = PdoLBC::$monPdo->exec($req);
 	}
+
+
 }
 ?>
