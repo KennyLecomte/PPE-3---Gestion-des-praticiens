@@ -5,6 +5,7 @@ switch($action)
 {
 	case 'formulaireVisite':
 	{
+		$praticien=$pdo->getPraticien();
 		include("vues/v_formulaireVisite.php");
 	  	break;
 	}
@@ -24,10 +25,11 @@ switch($action)
 		$loginVisiteur=$_SESSION['loginVisiteur'];
 
 		$Visiteur=$pdo->getIdVisiteur($loginVisiteur);
-		$IdVisiteur=$Visiteur['MATRICULEVISITEUR'];
+		$matriculeVisiteur=$Visiteur['MATRICULEVISITEUR'];
 
-		$pdo->getSallesAvecNom($idPraticien, $matriculeVisiteur, $dateVisite, $bilanVisite, $motifVisite);
-		include("vues/index.php?uc=accueil");
+		var_dump($matriculeVisiteur);
+		$pdo->ajoutVisite($idPraticien, $matriculeVisiteur, $dateVisite, $bilanVisite, $motifVisite);
+		header('Location: index.php?uc=accueil');
 		break;
 	}
 }
