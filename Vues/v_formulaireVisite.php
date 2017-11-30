@@ -17,8 +17,8 @@
 	</select><br>
 
 	<input type="date" placeholder="Date de Visite" name="dateVisite"><br>
-	<input class="grandInput" type="text" placeholder="Bilan de visite" name="bilanVisite"><br>
-	<input class="grandInput" type="text" placeholder="Motif de la visite" name="motifVisite"><br>
+	<textarea class="grandInput" type="text" placeholder="Bilan de visite" name="bilanVisite"></textarea><br>
+	<textarea class="grandInput" type="text" placeholder="Motif de la visite" name="motifVisite"></textarea><br>
 	<input type="submit" value ="VALIDER">
-
+	
 </form>

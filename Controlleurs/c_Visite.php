@@ -29,7 +29,6 @@ switch($action)
 		$Visiteur=$pdo->getIdVisiteur($loginVisiteur);
 		$matriculeVisiteur=$Visiteur['MATRICULEVISITEUR'];
 
-		var_dump($matriculeVisiteur);
 		$pdo->ajoutVisite($idPraticien, $matriculeVisiteur, $dateVisite, $bilanVisite, $motifVisite);
 		header('Location: index.php?uc=accueil');
 		break;
