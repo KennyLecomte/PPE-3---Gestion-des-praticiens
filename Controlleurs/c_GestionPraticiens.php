@@ -66,8 +66,13 @@ switch ($action) {
 	default:
 		
 		break;
+
+
+		case 'FormulairePraticien':
+
+		$praticien=$pdo->getPraticien();
+		include("vues/v_FormulairePraticien.php");
+		break;
 }
-
-
 
 ?>

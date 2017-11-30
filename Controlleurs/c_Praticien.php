@@ -31,8 +31,5 @@
 			$pdo->ajouterPraticien($idRegion, $nomPraticien, $prenomPraticien, $villePraticien, $adressePraticien, $cpPraticien, $notorietePraticien);
 			break;
 		}
-
-
-	
 	}
 ?>
