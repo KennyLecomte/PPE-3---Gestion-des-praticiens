@@ -26,7 +26,6 @@ switch($action)
 		$Visiteur=$pdo->getIdVisiteur($loginVisiteur);
 		$IdVisiteur=$Visiteur['MATRICULEVISITEUR'];
 
-		var_dump($IdVisiteur);
 		$pdo->getSallesAvecNom($idPraticien, $matriculeVisiteur, $dateVisite, $bilanVisite, $motifVisite);
 		include("vues/index.php?uc=accueil");
 		break;

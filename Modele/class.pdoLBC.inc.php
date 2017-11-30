@@ -129,6 +129,27 @@ var_dump($notorietePraticien);
 		$res = PdoLBC::$monPdo->exec($req);
 	}
 
+	public function getInfosPraticien($idPraticien)
+  	{
+	    $req = "SELECT * FROM praticien WHERE idPraticien='$idPraticien'";
+	    $res = PdoLBC::$monPdo->query($req);
+	    $lePraticien = $res->fetch();
+	    return $lePraticien;
+ 	}
 
+ 	public function getRegionVisiteur($idVisiteur)
+  	{
+	    $req = "SELECT idRegion FROM travailler WHERE matriculeVisiteur='$idVisiteur'";
+	    $res = PdoLBC::$monPdo->query($req);
+	    $laRegion = $res->fetch();
+	    return $laRegion;
+ 	}
+
+ 	public function supprimerPraticienVisiteur($idVisiteur,$idPraticien)
+	{
+		$req="DELETE FROM attribuer WHERE matriculeVisiteur='$idVisiteur' AND idPraticien='$idPraticien'";
+		echo $req;
+		$res = PdoLBC::$monPdo->exec($req);
+	}
 }
 ?>
