@@ -108,7 +108,9 @@ var_dump($notorietePraticien);
 	}
 
 	public function getAffectations(){
-		$req = "SELECT * FROM attribuer";
+		$req = "SELECT * FROM attribuer, praticien, visiteur
+		WHERE praticien.idPraticien=attribuer.idPraticien
+		AND visiteur.matriculeVisiteur=attribuer.matriculeVisiteur";
 		$res = PdoLBC::$monPdo->query($req);
 		return $res;
 	}
