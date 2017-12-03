@@ -28,16 +28,7 @@ class PdoLBC
 	}
 
 	public function ajouterPraticien($idRegion, $nomPraticien, $prenomPraticien, $villePraticien, $adressePraticien, $cpPraticien, $notorietePraticien)
-	{
-	var_dump($idRegion);
-	var_dump($nomPraticien);
-var_dump($prenomPraticien);
-var_dump($villePraticien);
-var_dump($adressePraticien);
-var_dump($cpPraticien);
-var_dump($notorietePraticien);
-		
-
+	{	
 		$req="INSERT INTO praticien(IDREGION, NOMPRATICIEN, PRENOMPRATICIEN, ADRESSEPRATICIEN, CPPRATICIEN, VILLEPRATICIEN, COEFFICIENTNOTORIETEPRATICIEN) VALUES('$idRegion', '$nomPraticien','$prenomPraticien','$adressePraticien', '$cpPraticien','$villePraticien', '$notorietePraticien')";
 		echo $req;
 		$res = PdoLBC::$monPdo->exec($req);
@@ -70,6 +61,22 @@ var_dump($notorietePraticien);
 	public function getPraticiensVisiteur($id)
 	{
 		$req = "SELECT NOMPRATICIEN, PRENOMPRATICIEN, praticien.idPraticien as 'IDPRATICIEN' FROM praticien, attribuer WHERE attribuer.idPraticien=praticien.idPraticien AND attribuer.matriculeVisiteur='$id'";
+		$res = PdoLBC::$monPdo->query($req);
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+	}
+
+	public function getPraticiensVisiteurNom($nomVisiteur)
+	{
+		$req = "SELECT NOMPRATICIEN, PRENOMPRATICIEN, NOMVISITEUR, PRENOMVISITEUR FROM praticien, attribuer, visiteur WHERE attribuer.idPraticien=praticien.idPraticien AND attribuer.matriculeVisiteur=visiteur.matriculeVisiteur AND nomVisiteur='$nomVisiteur'";
+		$res = PdoLBC::$monPdo->query($req);
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+	}
+
+	public function getVisiteursPraticien($nomPraticien)
+	{
+		$req = "SELECT NOMPRATICIEN, PRENOMPRATICIEN, NOMVISITEUR, PRENOMVISITEUR FROM praticien, attribuer, visiteur WHERE attribuer.idPraticien=praticien.idPraticien AND attribuer.matriculeVisiteur=visiteur.matriculeVisiteur AND nomPraticien='$nomPraticien'";
 		$res = PdoLBC::$monPdo->query($req);
 		$lesLignes = $res->fetchAll();
 		return $lesLignes;
@@ -150,6 +157,28 @@ var_dump($notorietePraticien);
 		$req="DELETE FROM attribuer WHERE matriculeVisiteur='$idVisiteur' AND idPraticien='$idPraticien'";
 		echo $req;
 		$res = PdoLBC::$monPdo->exec($req);
+	}
+
+	public function ajouterSpecialite($idSpecialite, $nomSpecialite)
+	{	
+		$req="INSERT INTO specialite VALUES('$idSpecialite', '$nomSpecialite')";
+		$res = PdoLBC::$monPdo->exec($req);
+	}
+
+	public function getVisitesDate($dateVisite)
+	{
+		$req = "SELECT NOMPRATICIEN, PRENOMPRATICIEN, NOMVISITEUR, PRENOMVISITEUR, dateVisite, bilanVisite, motifVisite FROM praticien, visite, visiteur WHERE visite.idPraticien=praticien.idPraticien AND visite.matriculeVisiteur=visiteur.matriculeVisiteur AND dateVisite='$dateVisite'";
+		$res = PdoLBC::$monPdo->query($req);
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+	}
+
+	public function getPraticiensRegion($idRegion)
+	{
+		$req = "SELECT NOMPRATICIEN, PRENOMPRATICIEN, NOMREGION FROM praticien, region WHERE region.idRegion=praticien.idRegion AND praticien.idRegion='$idRegion'";
+		$res = PdoLBC::$monPdo->query($req);
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
 	}
 }
 ?>
