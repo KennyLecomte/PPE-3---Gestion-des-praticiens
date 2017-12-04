@@ -1,4 +1,4 @@
-<form action="index.php?uc=ajoutVisite&action=confirmerVisite" method="post">
+<form action="index.php?uc=gestionPraticiens&action=VoirInfosPraticien" method="post">
 
 	
 

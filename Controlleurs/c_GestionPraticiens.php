@@ -62,19 +62,26 @@ switch ($action) {
 		header('Location: index.php?uc=gestionPraticiens&action=voirPraticiens');
 
 		break;
+	
+	default:
+		
+		break;
 
-	case 'FormulairePraticien':
+
+		case 'FormulairePraticien':
 
 		$praticien=$pdo->getPraticien();
 		include("vues/v_FormulairePraticien.php");
 		break;
-	
-		default:
-		
+
+		case 'VoirInfosPraticien':
+
+		$idPraticien = $_POST['idPraticien'];
+		$infosPraticien = $pdo-> getInfosPraticien($idPraticien);
+		$lesVisiteurs = $pdo-> getLesVisiteursDuPraticien($idPraticien);
+		$derniereVisite = $pdo-> getDerniereDateVisite($idPraticien);
+		include("vues/v_voirPraticien.php");
 		break;
-
-
-		
 }
 
 ?>

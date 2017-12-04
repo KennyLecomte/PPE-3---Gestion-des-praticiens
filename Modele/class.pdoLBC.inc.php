@@ -180,5 +180,27 @@ class PdoLBC
 		$lesLignes = $res->fetchAll();
 		return $lesLignes;
 	}
+
+	public function getLesVisiteursDuPraticien($idPraticien)
+	{
+		$req = "SELECT visiteur.NOMVISITEUR, visiteur.PRENOMVISITEUR FROM `praticien`, `visiteur`, `attribuer` 
+				WHERE praticien.IDPRATICIEN = attribuer.IDPRATICIEN
+				AND visiteur.MATRICULEVISITEUR = attribuer.MATRICULEVISITEUR
+				AND praticien.IDPRATICIEN = '$idPraticien'";
+		$res = PdoLBC::$monPdo->query($req);
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+	}
+
+	public function getDerniereDateVisite($idPraticien)
+	{
+		$req = "SELECT MAX(visite.DATEVISITE) FROM `visite`, `praticien`, `visiteur`
+				WHERE visiteur.MATRICULEVISITEUR = visite.MATRICULEVISITEUR
+				AND praticien.IDPRATICIEN = visite.IDPRATICIEN
+				AND praticien.IDPRATICIEN = '$idPraticien'";
+		$res = PdoLBC::$monPdo->query($req);
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+	}
 }
 ?>
