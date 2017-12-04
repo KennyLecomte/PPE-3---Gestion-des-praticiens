@@ -4,6 +4,8 @@ session_start();
 
 require_once("modele/class.pdoLBC.inc.php");
 
+include("vues/v_entete.php");
+
 if(!isset($_REQUEST['uc']))
      $uc = 'accueil';
 else
