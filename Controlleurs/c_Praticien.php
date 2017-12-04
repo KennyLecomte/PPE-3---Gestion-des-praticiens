@@ -64,6 +64,7 @@
 
 		case 'rechercheVisiteur':
 		{
+			$reponse=$pdo->getVisiteur();
 			include("vues/v_rechercheVisiteur.php");
 			break;
 		}
