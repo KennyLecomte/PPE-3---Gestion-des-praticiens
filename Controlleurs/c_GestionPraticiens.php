@@ -62,17 +62,19 @@ switch ($action) {
 		header('Location: index.php?uc=gestionPraticiens&action=voirPraticiens');
 
 		break;
-	
-	default:
-		
-		break;
 
-
-		case 'FormulairePraticien':
+	case 'FormulairePraticien':
 
 		$praticien=$pdo->getPraticien();
 		include("vues/v_FormulairePraticien.php");
 		break;
+	
+		default:
+		
+		break;
+
+
+		
 }
 
 ?>

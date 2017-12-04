@@ -49,6 +49,7 @@
 
 		case 'recherchePraticien':
 		{
+			$reponse=$pdo->getPraticien();
 			include("vues/v_recherchePraticien.php");
 			break;
 		}

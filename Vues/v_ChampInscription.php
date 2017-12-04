@@ -1,37 +1,20 @@
-<legend>Inscription</legend>
-<form action="index.php?uc=inscription&action=confirmInscription" method="post">
-<p>
-	<label>Matricule</label>
-	<input type="text" name="matriculeVisiteur">
-</p>
-<p>
-	<label>Nom</label>
-	<input type="text" name="nomVisiteur">
-</p>
-<p>
-	<label>Prénom</label>
-	<input type="text" name="prenomVisiteur">
-</p>
-<p>
-	<label>Adresse</label>
-	<input type="text" name="adresseVisiteur">
-</p>
-<p>
-	<label>Ville</label>
-   	<input type="text" name="villeVisiteur">
-</p>
-<p>
-	<label>Code Postal</label>
-   	<input type="text" name="cpVisiteur">
-</p>
-<p>
-	<label>Date embauche</label>
-	<input type="date" name="dateEmbaucheVisiteur">
-</p>
-<p>
-	<label>Mot de passe</label>
-	<input type="password" name="mdpVisiteur">
-</p>
-<input type="submit" name="Valider">
-</form>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-3">
+			<form action="index.php?uc=inscription&action=confirmInscription" method="post" class="form-signin">
+				<h2 class="form-signin-heading">Inscription</h2>
+				<input type="text" name="matriculeVisiteur" class="form-control" placeholder="Matricule" required autofocus autocomplete="off">
+				<input type="text" name="nomVisiteur" class="form-control" placeholder="Nom" required autofocus autocomplete="off">
+				<input type="text" name="prenomVisiteur" class="form-control" placeholder="Prénom" required autofocus autocomplete="off">
+				<input type="text" name="adresseVisiteur" class="form-control" placeholder="Adresse" required autofocus autocomplete="off">
+				<input type="text" name="villeVisiteur" class="form-control" placeholder="Ville" required autofocus autocomplete="off">
+				<input type="text" name="cpVisiteur" class="form-control" placeholder="Code postal" required autofocus autocomplete="off">
+				<input type="date" name="dateEmbaucheVisiteur" class="form-control" required autofocus autocomplete="off">
+				<input type="password" name="mdpVisiteur" class="form-control" placeholder="Mot de passe" required autofocus autocomplete="off">
+				<button class="btn btn-lg btn-primary btn-block" type="submit">Valider</button>
+			</form>
+		</div> 
+	</div>
+</div><!-- /container -->
 
