@@ -11,7 +11,7 @@
               
                 while ($ligne) 
                 {
-                    echo '<option selected value = "' . $ligne['NOMPRATICIEN'] . '">' . $ligne['PRENOMPRATICIEN'] 
+                    echo '<option selected value = "' . $ligne['NOMPRATICIEN'] . " ". $ligne['PRENOMPRATICIEN']  .'">' . $vide 
                     . '</option>';
                     $ligne = $reponse->fetch();
                 }

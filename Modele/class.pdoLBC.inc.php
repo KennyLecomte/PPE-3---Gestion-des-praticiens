@@ -68,7 +68,7 @@ class PdoLBC
 
 	public function getPraticiensVisiteurNom($nomVisiteur)
 	{
-		$req = "SELECT NOMPRATICIEN, PRENOMPRATICIEN, NOMVISITEUR, PRENOMVISITEUR FROM praticien, attribuer, visiteur WHERE attribuer.idPraticien=praticien.idPraticien AND attribuer.matriculeVisiteur=visiteur.matriculeVisiteur AND nomVisiteur='$nomVisiteur'";
+		$req = "SELECT NOMPRATICIEN, PRENOMPRATICIEN, NOMVISITEUR, PRENOMVISITEUR FROM praticien, attribuer, visiteur WHERE attribuer.idPraticien=praticien.idPraticien AND attribuer.matriculeVisiteur=visiteur.matriculeVisiteur AND CONCAT(NOMVISITEUR, ' ',PRENOMVISITEUR)='$nomVisiteur'";
 		$res = PdoLBC::$monPdo->query($req);
 		$lesLignes = $res->fetchAll();
 		return $lesLignes;
@@ -76,7 +76,7 @@ class PdoLBC
 
 	public function getVisiteursPraticien($nomPraticien)
 	{
-		$req = "SELECT NOMPRATICIEN, PRENOMPRATICIEN, NOMVISITEUR, PRENOMVISITEUR FROM praticien, attribuer, visiteur WHERE attribuer.idPraticien=praticien.idPraticien AND attribuer.matriculeVisiteur=visiteur.matriculeVisiteur AND nomPraticien='$nomPraticien'";
+		$req = "SELECT NOMPRATICIEN, PRENOMPRATICIEN, NOMVISITEUR, PRENOMVISITEUR FROM praticien, attribuer, visiteur WHERE attribuer.idPraticien=praticien.idPraticien AND attribuer.matriculeVisiteur=visiteur.matriculeVisiteur AND CONCAT(NOMPRATICIEN, ' ',PRENOMPRATICIEN)='$nomPraticien'";
 		$res = PdoLBC::$monPdo->query($req);
 		$lesLignes = $res->fetchAll();
 		return $lesLignes;

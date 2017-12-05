@@ -50,6 +50,7 @@
 
 		case 'recherchePraticien':
 		{
+			$vide=" "; 
 			$reponse=$pdo->getPraticien();
 			include("vues/v_recherchePraticien.php");
 			break;
@@ -65,6 +66,7 @@
 
 		case 'rechercheVisiteur':
 		{
+			$vide=" ";
 			$reponse=$pdo->getVisiteur();
 			include("vues/v_rechercheVisiteur.php");
 			break;
