@@ -80,7 +80,21 @@ switch ($action) {
 		$infosPraticien = $pdo-> getInfosPraticien($idPraticien);
 		$lesVisiteurs = $pdo-> getLesVisiteursDuPraticien($idPraticien);
 		$derniereVisite = $pdo-> getDerniereDateVisite($idPraticien);
+		$dateDerniereVisite = $derniereVisite['DATEVISITE'];
 		include("vues/v_voirPraticien.php");
+		break;
+
+
+		case 'RechercheNotoriete':
+
+		$lesPraticiens = $pdo-> getPraticienParNotoriete();
+		include("vues/v_voirPraticienNotoriete.php");
+		break;
+
+		case 'RechercheSpecialite':
+
+		$lesPraticiens = $pdo-> getPraticienParSpecialite();
+		include("vues/v_voirPraticienSpecialite.php");
 		break;
 }
 

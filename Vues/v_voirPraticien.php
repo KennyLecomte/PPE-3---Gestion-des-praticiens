@@ -16,7 +16,7 @@
 	<br>
    <label>Dernière visite le: </label>
    <?php 
-	echo $derniereVisite;
+	echo $dateDerniereVisite;
 	?>
 
 </table>

@@ -200,10 +200,27 @@ class PdoLBC
 
 	public function getDerniereDateVisite($idPraticien)
 	{
-		$req = "SELECT MAX(visite.DATEVISITE) FROM `visite`, `praticien`, `visiteur`
+		$req = "SELECT MAX(visite.DATEVISITE) AS 'DATEVISITE' FROM `visite`, `praticien`, `visiteur`
 				WHERE visiteur.MATRICULEVISITEUR = visite.MATRICULEVISITEUR
 				AND praticien.IDPRATICIEN = visite.IDPRATICIEN
 				AND praticien.IDPRATICIEN = '$idPraticien'";
+		$res = PdoLBC::$monPdo->query($req);
+		$lesLignes = $res->fetch();
+		return $lesLignes;
+	}
+
+	public function getPraticienParNotoriete()
+	{
+		$req = "SELECT * FROM praticien ORDER BY `COEFFICIENTNOTORIETEPRATICIEN` DESC";
+		$res = PdoLBC::$monPdo->query($req);
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+	}
+
+
+	public function getPraticienParSpecialite()
+	{
+		$req = "SELECT NOMPRATICIEN, PRENOMPRATICIEN, LIBELLESPECIALITE FROM praticien, specialiser, specialite WHERE praticien.IDPRATICIEN = specialiser.IDPRATICIEN AND specialiser.IDSPECIALITE = specialite.IDSPECIALITE ORDER BY specialite.LIBELLESPECIALITE";
 		$res = PdoLBC::$monPdo->query($req);
 		$lesLignes = $res->fetchAll();
 		return $lesLignes;
