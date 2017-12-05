@@ -29,6 +29,7 @@
 			$adressePraticien=$_POST["adressePraticien"];
 			$notorietePraticien=$_POST["notorietePraticien"];
 			$pdo->ajouterPraticien($idRegion, $nomPraticien, $prenomPraticien, $villePraticien, $adressePraticien, $cpPraticien, $notorietePraticien);
+			include("vues/v_Accueil.php");
 			break;
 		}
 

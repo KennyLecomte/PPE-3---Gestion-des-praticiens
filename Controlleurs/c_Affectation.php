@@ -10,7 +10,7 @@
 switch ($action) {
 		case 'vueAjouterAffectation':
 		{
-			var_dump($_SESSION['typeVisiteur']);
+			
 			if($_SESSION['typeVisiteur']=="Responsable")
 			{
 				$praticien=$pdo->getPraticien();
@@ -41,8 +41,6 @@ switch ($action) {
 		{	
 			$idVisiteur=$_REQUEST['idVisiteur'];
 			$idPraticien=$_REQUEST['idPraticien'];
-			var_dump($idPraticien);
-			var_dump($idVisiteur);
 			$pdo->supprimerPraticienVisiteur($idVisiteur,$idPraticien);
 			header('Location: index.php?uc=affectation&action=voirAffectation');
 			break;
