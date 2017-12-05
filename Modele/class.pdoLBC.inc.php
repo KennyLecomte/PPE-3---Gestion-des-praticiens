@@ -82,10 +82,16 @@ class PdoLBC
 		return $lesLignes;
 	}
 
-	public function ajouterVisiteur($matricule,$nom,$prenom,$adresse,$ville,$cp,$dateEmbauche,$login)
+	public function ajouterVisiteur($matricule,$nom,$prenom,$adresse,$ville,$cp,$dateEmbauche,$login,$region,$mdp)
 	{
 		$req="INSERT INTO visiteur(matriculeVisiteur, nomVisiteur, prenomVisiteur, adresseVisiteur, cpVisiteur, villeVisiteur, dateEmbaucheVisiteur, loginVisiteur) VALUES('$matricule','$nom','$prenom', '$adresse', '$cp', '$ville', '$dateEmbauche','$login')";
-		echo $req;
+		$res = PdoLBC::$monPdo->exec($req);
+
+		$req="INSERT INTO travailler(matriculeVisiteur, idRegion, dateTravail) VALUES('$matricule','$region','$dateEmbauche')";
+		$res = PdoLBC::$monPdo->exec($req);
+
+		//A changer quand mdp sera changé dans table
+		$req="INSERT INTO nonresponsable(matriculeVisiteur, mdpVisiteur) VALUES('$matricule','$mdp')";
 		$res = PdoLBC::$monPdo->exec($req);
 	}
 

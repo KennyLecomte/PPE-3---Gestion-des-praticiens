@@ -10,6 +10,20 @@
 				<input type="text" name="adresseVisiteur" class="form-control" placeholder="Adresse" required autofocus autocomplete="off">
 				<input type="text" name="villeVisiteur" class="form-control" placeholder="Ville" required autofocus autocomplete="off">
 				<input type="text" name="cpVisiteur" class="form-control" placeholder="Code postal" required autofocus autocomplete="off">
+				<select name="regionVisiteur" size="1" class="form-control">
+			      <?php
+			      $ligne = $reponse->fetch();
+			      if($ligne)
+			      {
+			        while ($ligne) 
+			        {
+			           	echo '<option selected value = "' . $ligne["IDREGION"] . '">' . $ligne["NOMREGION"] 
+			            . '</option>';
+			            $ligne = $reponse->fetch();
+			        }
+			      }
+			      ?>
+				</select>
 				<input type="date" name="dateEmbaucheVisiteur" class="form-control" required autofocus autocomplete="off">
 				<input type="password" name="mdpVisiteur" class="form-control" placeholder="Mot de passe" required autofocus autocomplete="off">
 				<button class="btn btn-lg btn-primary btn-block" type="submit">Valider</button>
