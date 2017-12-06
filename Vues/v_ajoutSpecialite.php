@@ -8,7 +8,7 @@
 			    <label>Identifiant</label>
 			    <input type="text" class="form-control" placeholder="Identifiant" name="idSpecialite" maxlength="3">
 			    <label>Spécialité</label>
-			    <input type="text" class="form-control" placeholder="Spécialité" name="nomSpecialite" maxlength="3">
+			    <input type="text" class="form-control" placeholder="Spécialité" name="nomSpecialite">
 				</br>
 			    <button type="submit" class="btn btn-default">Ajouter</button>
 			   </div>
