@@ -26,6 +26,7 @@ switch ($action) {
 			$idPraticien = $_POST["idPraticien"];
 			$idVisiteur = $_POST["idVisiteur"];
 			$pdo->ajouterAffectation($idPraticien,$idVisiteur);
+			header('Location: index.php?uc=affectation&action=voirAffectation');
 			break;
 		}
 

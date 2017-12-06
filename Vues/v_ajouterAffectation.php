@@ -2,8 +2,8 @@
 
     <div class="row">
       <form action="index.php?uc=affectation&action=ajouterAffectation" method="post">
-        <div class="col-md-5"></div>
-        <div class="col-md-2">
+        <div class="col-md-4"></div>
+        <div class="col-md-3">
             <select name="idPraticien" size="1" class="form-control">
               <?php
               $ligne = $praticien->fetch();
@@ -17,16 +17,8 @@
               }
               ?>
             </select>
-        </div>
-        <div class="col-md-5"></div>
-
-    </div>
-
-
-     <div class="row">
-        <div class="col-md-5"></div>
-        <div class="col-md-2">
-          <select name="idVisiteur" size="1" class="form-control">
+            <br>
+            <select name="idVisiteur" size="1" class="form-control">
             <?php
             $ligne = $visiteur->fetch();
             if($ligne)
@@ -39,20 +31,14 @@
             }
             ?>
           </select>
-        </div>
-        <div class="col-md-5"></div>
-    </div>
-
-     <div class="row" >
-        <div class="col-md-5"></div>
-        <div class="col-md-2">
+          <br>
           <input type="submit" value="valider" class="btn btn-lg btn-primary btn-block">
           </form> 
         </div>
         <div class="col-md-5"></div>
+
     </div>
-  
-</div>
+
 
 
 
