@@ -26,7 +26,7 @@
                     ?> 
                 </table>
             </div>
-            <a class="btn btn-lg btn-primary btn-block" href="index.php?uc=gestionPraticiens&action=ajoutPraticienVisiteur">Ajouter un praticien</a>
+            <a class="btn btn-lg btn-primary btn-block" href="index.php?uc=gestionPraticiens&action=ajoutPraticienVisiteur">Ajouter une affectation</a>
         </div>
     </div>
 </div>
