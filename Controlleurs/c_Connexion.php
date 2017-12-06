@@ -24,8 +24,9 @@ $idVisiteur=$leVisiteur['MATRICULEVISITEUR'];
 
 $mdpVisiteur=$pdo->getMdpVisiteur($idVisiteur);
 $mdpVisiteur=$mdpVisiteur['mdpVisiteur'];
-$mdpResponsable=$pdo->getMdpResponsable($idVisiteur);
-$mdpResponsable=$mdpResponsable['mdpResponsable'];
+
+$reponse=$pdo->getResponsable($idVisiteur);
+$responsable=$reponse['responsable'];
 
 if($mdp==$mdpVisiteur)
 {
@@ -33,15 +34,18 @@ if($mdp==$mdpVisiteur)
 	$_SESSION['nomVisiteur']=$leVisiteur['NOMVISITEUR'];
 	$_SESSION['prenomVisiteur']=$leVisiteur['PRENOMVISITEUR'];
 	$_SESSION['loginVisiteur']=$leVisiteur['LOGINVISITEUR'];
-	$_SESSION['typeVisiteur']="Visiteur";
-}
-else if($mdp==$mdpResponsable)
-{
-	$_SESSION['idVisiteur']=$leVisiteur['MATRICULEVISITEUR'];
-	$_SESSION['nomVisiteur']=$leVisiteur['NOMVISITEUR'];
-	$_SESSION['prenomVisiteur']=$leVisiteur['PRENOMVISITEUR'];
-	$_SESSION['loginVisiteur']=$leVisiteur['LOGINVISITEUR'];
-	$_SESSION['typeVisiteur']="Responsable";
+
+	var_dump($responsable);
+
+	if($responsable==1)
+	{
+		$_SESSION['typeVisiteur']="Responsable";
+	}
+	else if($responsable==0)
+	{
+		$_SESSION['typeVisiteur']="Visiteur";
+	}
+	
 }
 
 header('Location: index.php?uc=accueil');	

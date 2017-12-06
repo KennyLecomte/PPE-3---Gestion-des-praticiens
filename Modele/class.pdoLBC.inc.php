@@ -44,15 +44,7 @@ class PdoLBC
 
 	public function getMdpVisiteur($id)
 	{
-		$req = "SELECT mdpVisiteur FROM nonresponsable WHERE matriculeVisiteur='$id'";
-		$res = PdoLBC::$monPdo->query($req);
-		$lesLignes = $res->fetch();
-		return $lesLignes;
-	}
-
-	public function getMdpResponsable($id)
-	{
-		$req = "SELECT mdpResponsable FROM responsable WHERE matriculeVisiteur='$id'";
+		$req = "SELECT mdpVisiteur FROM visiteur WHERE matriculeVisiteur='$id'";
 		$res = PdoLBC::$monPdo->query($req);
 		$lesLignes = $res->fetch();
 		return $lesLignes;
@@ -84,14 +76,10 @@ class PdoLBC
 
 	public function ajouterVisiteur($matricule,$nom,$prenom,$adresse,$ville,$cp,$dateEmbauche,$login,$region,$mdp)
 	{
-		$req="INSERT INTO visiteur(matriculeVisiteur, nomVisiteur, prenomVisiteur, adresseVisiteur, cpVisiteur, villeVisiteur, dateEmbaucheVisiteur, loginVisiteur) VALUES('$matricule','$nom','$prenom', '$adresse', '$cp', '$ville', '$dateEmbauche','$login')";
+		$req="INSERT INTO visiteur(matriculeVisiteur, nomVisiteur, prenomVisiteur, adresseVisiteur, cpVisiteur, villeVisiteur, dateEmbaucheVisiteur, mdpVisiteur, loginVisiteur) VALUES('$matricule','$nom','$prenom', '$adresse', '$cp', '$ville', '$dateEmbauche','$mdp','$login')";
 		$res = PdoLBC::$monPdo->exec($req);
 
 		$req="INSERT INTO travailler(matriculeVisiteur, idRegion, dateTravail) VALUES('$matricule','$region','$dateEmbauche')";
-		$res = PdoLBC::$monPdo->exec($req);
-
-		//A changer quand mdp sera changé dans table
-		$req="INSERT INTO nonresponsable(matriculeVisiteur, mdpVisiteur) VALUES('$matricule','$mdp')";
 		$res = PdoLBC::$monPdo->exec($req);
 	}
 
@@ -223,6 +211,14 @@ class PdoLBC
 		$req = "SELECT NOMPRATICIEN, PRENOMPRATICIEN, LIBELLESPECIALITE FROM praticien, specialiser, specialite WHERE praticien.IDPRATICIEN = specialiser.IDPRATICIEN AND specialiser.IDSPECIALITE = specialite.IDSPECIALITE ORDER BY specialite.LIBELLESPECIALITE";
 		$res = PdoLBC::$monPdo->query($req);
 		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+	}
+
+	public function getResponsable($idVisiteur)
+	{
+		$req = "SELECT COUNT(*) AS responsable FROM responsable WHERE matriculeVisiteur='$idVisiteur'";
+		$res = PdoLBC::$monPdo->query($req);
+		$lesLignes = $res->fetch();
 		return $lesLignes;
 	}
 }
