@@ -19,7 +19,8 @@
           <ul class="dropdown-menu">
             <li><a href="index.php?uc=gestionPraticiens&action=voirPraticiens">Voir vos praticiens</a></li>
             <li><a href="index.php?uc=gestionPraticiens&action=FormulairePraticien">Recherche d'un praticien</a></li>
-            <li><a href="#">Liste des praticiens</a></li>
+            <li><a href="index.php?uc=gestionPraticiens&action=RechercheNotoriete">Rechercher par notoriété</a></li>
+      <li><a href="index.php?uc=gestionPraticiens&action=RechercheSpecialite">Rechercher par spécialité</a></li>
             <li><a href="index.php?uc=ajoutVisite&action=formulaireVisite">Ajouter une visite</a></li>
           </ul>
         </li>
