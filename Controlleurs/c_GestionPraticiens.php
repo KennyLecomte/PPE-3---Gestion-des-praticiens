@@ -79,8 +79,7 @@ switch ($action) {
 		$idPraticien = $_POST['idPraticien'];
 		$infosPraticien = $pdo-> getInfosPraticien($idPraticien);
 		$lesVisiteurs = $pdo-> getLesVisiteursDuPraticien($idPraticien);
-		$derniereVisite = $pdo-> getDerniereDateVisite($idPraticien);
-		$dateDerniereVisite = $derniereVisite['DATEVISITE'];
+		$lesDates = $pdo-> getDernieresDatesVisites($idPraticien);
 		include("vues/v_voirPraticien.php");
 		break;
 

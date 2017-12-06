@@ -198,14 +198,14 @@ class PdoLBC
 		return $lesLignes;
 	}
 
-	public function getDerniereDateVisite($idPraticien)
+	public function getDernieresDatesVisites($idPraticien)
 	{
-		$req = "SELECT MAX(visite.DATEVISITE) AS 'DATEVISITE' FROM `visite`, `praticien`, `visiteur`
+		$req = "SELECT visite.DATEVISITE FROM `visite`, `praticien`, `visiteur`
 				WHERE visiteur.MATRICULEVISITEUR = visite.MATRICULEVISITEUR
 				AND praticien.IDPRATICIEN = visite.IDPRATICIEN
 				AND praticien.IDPRATICIEN = '$idPraticien'";
 		$res = PdoLBC::$monPdo->query($req);
-		$lesLignes = $res->fetch();
+		$lesLignes = $res->fetchAll();
 		return $lesLignes;
 	}
 
