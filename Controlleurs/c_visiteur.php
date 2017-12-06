@@ -6,7 +6,7 @@ switch ($action) {
 
 		$loginVisiteur=$_SESSION['loginVisiteur'];
 
-		$leVisiteur=$pdo->getIdVisiteur($loginVisiteur);
+		$leVisiteur=$pdo->getVisiteurLogin($loginVisiteur);
 
 		$idVisiteur=$leVisiteur['MATRICULEVISITEUR'];
 
@@ -16,18 +16,18 @@ switch ($action) {
 
 		break;
 
-	case 'ajoutPraticienVisiteur':
+	case 'ajoutAffectationVisiteur':
 
 		$praticien=$pdo->getPraticien();
 
-		include("vues/v_ajoutPraticienVisiteur.php");
+		include("vues/v_ajoutAffectationVisiteur.php");
 
 		break;
 
-	case 'confirmAjoutPraticienVisiteur':
+	case 'confirmAjoutAffectationVisiteur':
 
 		$loginVisiteur=$_SESSION['loginVisiteur'];
-		$leVisiteur=$pdo->getIdVisiteur($loginVisiteur);
+		$leVisiteur=$pdo->getVisiteurLogin($loginVisiteur);
 
 		$idVisiteur=$leVisiteur['MATRICULEVISITEUR'];
 		$laRegionVisiteur=$pdo->getRegionVisiteur($idVisiteur);
@@ -40,7 +40,7 @@ switch ($action) {
 		if($regionVisiteur==$regionPraticien)
 		{
 			$pdo->ajouterAffectation($idPraticien,$idVisiteur);
-			header('Location: index.php?uc=gestionPraticiens&action=voirPraticiens');
+			header('Location: index.php?uc=visiteur&action=voirPraticiens');
 		}
 		else
 		{
@@ -52,29 +52,24 @@ switch ($action) {
 	case 'supprimerAffectation':
 
 		$loginVisiteur=$_SESSION['loginVisiteur'];
-		$leVisiteur=$pdo->getIdVisiteur($loginVisiteur);
+		$leVisiteur=$pdo->getVisiteurLogin($loginVisiteur);
 		$idVisiteur=$leVisiteur['MATRICULEVISITEUR'];
 
 		$idPraticien=$_REQUEST['id'];
 
 		$pdo->supprimerPraticienVisiteur($idVisiteur,$idPraticien);
 
-		header('Location: index.php?uc=gestionPraticiens&action=voirPraticiens');
+		header('Location: index.php?uc=visiteur&action=voirPraticiens');
 
 		break;
-	
-	default:
-		
-		break;
 
-
-		case 'FormulairePraticien':
+		case 'recherchePraticien':
 
 		$praticien=$pdo->getPraticien();
 		include("vues/v_FormulairePraticien.php");
 		break;
 
-		case 'VoirInfosPraticien':
+		case 'voirInfosPraticien':
 
 		$idPraticien = $_POST['idPraticien'];
 		$infosPraticien = $pdo-> getInfosPraticien($idPraticien);
@@ -84,17 +79,46 @@ switch ($action) {
 		break;
 
 
-		case 'RechercheNotoriete':
+		case 'rechercheNotoriete':
 
 		$lesPraticiens = $pdo-> getPraticienParNotoriete();
 		include("vues/v_voirPraticienNotoriete.php");
 		break;
 
-		case 'RechercheSpecialite':
+		case 'rechercheSpecialite':
 
 		$lesPraticiens = $pdo-> getPraticienParSpecialite();
 		include("vues/v_voirPraticienSpecialite.php");
 		break;
+
+		case 'ajouterVisite':
+	{
+		$praticien=$pdo->getPraticien();
+		include("vues/v_formulaireVisite.php");
+	  	break;
+	}
+	case 'formulaireCompte':
+	{
+		include("vues/v_formulaireCompte.php");
+	  	break;
+	}
+	
+	case 'confirmAjoutVisite':
+	{
+
+	  	$idPraticien=$_POST['idPraticien'];
+	  	$dateVisite=$_POST['dateVisite'];
+	  	$bilanVisite=$_POST['bilanVisite'];
+	  	$motifVisite=$_POST['motifVisite'];
+		$loginVisiteur=$_SESSION['loginVisiteur'];
+
+		$Visiteur=$pdo->getVisiteurLogin($loginVisiteur);
+		$matriculeVisiteur=$Visiteur['MATRICULEVISITEUR'];
+
+		$pdo->ajoutVisite($idPraticien, $matriculeVisiteur, $dateVisite, $bilanVisite, $motifVisite);
+		header('Location: index.php?uc=accueil');
+		break;
+	}
 }
 
 ?>

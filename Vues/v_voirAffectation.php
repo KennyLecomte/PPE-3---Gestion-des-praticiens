@@ -15,7 +15,7 @@
 				   		<tr>
 				       		<td><?php echo $uneLigne["NOMPRATICIEN"] . " " . $uneLigne["PRENOMPRATICIEN"] ?></td>
 				       		<td><?php echo $uneLigne["NOMVISITEUR"] . " " . $uneLigne["PRENOMVISITEUR"]?></td>
-					      	<td><a href="index.php?uc=affectation&action=supprimerAffectation&idVisiteur=<?php echo $uneLigne["MATRICULEVISITEUR"]?>&idPraticien=<?php echo $uneLigne["IDPRATICIEN"]?>"><img src="Images/croix.png" width="30" height= "30" alt="supprimer affectation"/></a></td>
+					      	<td><a href="index.php?uc=responsable&action=supprimerAffectation&idVisiteur=<?php echo $uneLigne["MATRICULEVISITEUR"]?>&idPraticien=<?php echo $uneLigne["IDPRATICIEN"]?>"><img src="Images/croix.png" width="30" height= "30" alt="supprimer affectation"/></a></td>
 				  		</tr>
 					<?php 
 					}
@@ -24,7 +24,7 @@
 					</table>
 					</a>
 				</div>
-				<a href="index.php?uc=affectation&action=vueAjouterAffectation" class="btn btn-lg btn-primary btn-block"> Ajouter une affectation</a>
+				<a href="index.php?uc=responsable&action=ajouterAffectation" class="btn btn-lg btn-primary btn-block"> Ajouter une affectation</a>
 			</div>
 	</div>
 </div>

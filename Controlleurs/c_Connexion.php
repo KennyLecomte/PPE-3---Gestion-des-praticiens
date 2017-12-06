@@ -18,7 +18,7 @@ else
 	$mdp=$_POST['mdpConnexion'];
 }
 
-$leVisiteur=$pdo->getIdVisiteur($login);
+$leVisiteur=$pdo->getVisiteurLogin($login);
 
 $idVisiteur=$leVisiteur['MATRICULEVISITEUR'];
 

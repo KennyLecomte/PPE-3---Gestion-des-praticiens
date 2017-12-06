@@ -1,32 +1,3 @@
-<!-- <table border="collapse">
-	<?php 
-		 	foreach ($lesVisiteurs as $unVisiteur) {
-	?>
-	   <tr>
-	       <td><?php echo $unVisiteur["NOMVISITEUR"] . " " . $unVisiteur["PRENOMVISITEUR"] ?></td>
-	   </tr>
-
-	<?php 
-		}
-	?>
-</table>
-
-<table border="collapse">
-	<?php 
-	 	foreach ($lesDates as $uneDate) {
-	 	
-	 	?>
-   <tr>
-       <td><?php echo $uneDate["DATEVISITE"] ?></td>
-   </tr>
-
-	<?php 
-	}
-	?>
-
-</table> -->
-
-
 <div class="container">
     <div class="row">
         <div class="col-md-2"></div>

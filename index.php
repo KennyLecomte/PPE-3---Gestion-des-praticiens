@@ -15,10 +15,6 @@ if(!isset($_SESSION['idVisiteur']))
 {
 	include("vues/v_ChampConnexion.php");
 }
-else
-{
-	include("vues/v_InformationsConnexion.php");
-}
 
 if(isset($_SESSION['idVisiteur']))
 {
@@ -37,20 +33,16 @@ switch($uc)
 {
 	case 'accueil':
 		{include("vues/v_accueil.php");break;}		
-	case 'praticien' :
-		{include("Controlleurs/c_Praticien.php");break;}
+	case 'responsable' :
+		{include("Controlleurs/c_responsable.php");break;}
 	case 'connexion' :
-		{include("Controlleurs/c_Connexion.php");break;}
+		{include("Controlleurs/c_connexion.php");break;}
 	case 'deconnexion' :
 		{include("Controlleurs/c_Deconnexion.php");break;}
-	case 'ajoutVisite' :
-		{include("Controlleurs/c_Visite.php");break;}
 	case 'inscription' :
 		{ include("Controlleurs/c_Inscription.php");break; }
-	case 'gestionPraticiens' :
-		{ include("Controlleurs/c_gestionPraticiens.php");break; }
-	case 'affectation' :
-		{ include("Controlleurs/c_Affectation.php");break; }
+	case 'visiteur' :
+		{ include("Controlleurs/c_visiteur.php");break; }
 
 
 }

@@ -2,7 +2,7 @@
 <div class="row">
 	<div class="col-md-4"></div>
 	<div class="col-md-4">
-		<form action="index.php?uc=praticien&action=confirmRechercheRegion" method="post">
+		<form action="index.php?uc=responsable&action=confirmRechercheRegion" method="post">
 		  <div class="form-group">
 		    <label>Région</label>
 		    <select name="idRegion" size="1" class="form-control">

@@ -34,7 +34,7 @@ class PdoLBC
 		$res = PdoLBC::$monPdo->exec($req);
 	}
 
-	public function getIdVisiteur($login)
+	public function getVisiteurLogin($login)
 	{
 		$req = "SELECT * FROM visiteur WHERE loginVisiteur='$login'";
 		$res = PdoLBC::$monPdo->query($req);
@@ -122,13 +122,6 @@ class PdoLBC
 	    $res = PdoLBC::$monPdo->query($req);
 	    return $res;
  	}
-
- 	public function ajoutVisiteur($matricule,$nom,$prenom,$adresse,$ville,$cp,$dateEmbauche,$mdp)
-	{
-		$req="INSERT INTO visiteur(matriculeVisiteur, prenomVisiteur, adresseVisiteur, cpVisiteur, villeVisiteur, dateEmbaucheVisiteur, loginVisiteur) VALUES('$nom','$prenom','$ville', '$adresse', '$cp', '$notoriete', '$lieuAct')";
-		echo $req;
-		$res = PdoLBC::$monPdo->exec($req);
-	}
 
 	public function getInfosPraticien($idPraticien)
   	{

@@ -1,7 +1,7 @@
 <div class="container">
 
     <div class="row">
-      <form action="index.php?uc=affectation&action=ajouterAffectation" method="post">
+      <form action="index.php?uc=responsable&action=confirmAjoutAffectation" method="post">
         <div class="col-md-4"></div>
         <div class="col-md-3">
             <select name="idPraticien" size="1" class="form-control">

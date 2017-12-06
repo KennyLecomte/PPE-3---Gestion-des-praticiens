@@ -20,8 +20,6 @@
 		case 'ajouterPraticien':
 		{
 			$idRegion=$_POST["idRegion"];
-
-
 			$nomPraticien=$_POST["nomPraticien"];
 			$prenomPraticien = $_POST["prenomPraticien"];
 			$villePraticien = $_POST["villePraticien"];
@@ -29,7 +27,7 @@
 			$adressePraticien=$_POST["adressePraticien"];
 			$notorietePraticien=$_POST["notorietePraticien"];
 			$pdo->ajouterPraticien($idRegion, $nomPraticien, $prenomPraticien, $villePraticien, $adressePraticien, $cpPraticien, $notorietePraticien);
-			include("vues/v_Accueil.php");
+			header('Location: index.php?uc=accueil');
 			break;
 		}
 
@@ -106,6 +104,40 @@
 			$idRegion = $_POST["idRegion"];
 			$results=$pdo->getPraticiensRegion($idRegion);
 			include("vues/v_praticiensRegion.php");
+			break;
+		}
+
+		case 'ajouterAffectation':
+		{
+			$praticien=$pdo->getPraticien();
+			$visiteur=$pdo->getVisiteur();
+			include("vues/v_ajouterAffectation.php");
+			break;
+		}
+
+		case 'confirmAjoutAffectation':
+		{
+			$idPraticien = $_POST["idPraticien"];
+			$idVisiteur = $_POST["idVisiteur"];
+			$pdo->ajouterAffectation($idPraticien,$idVisiteur);
+			header('Location: index.php?uc=responsable&action=voirAffectation');
+			break;
+		}
+
+		case 'voirAffectation':
+		{
+			$affectations=$pdo->getAffectations();
+			include("vues/v_voirAffectation.php");
+			break;
+		}
+
+		case 'supprimerAffectation':
+
+		{	
+			$idVisiteur=$_REQUEST['idVisiteur'];
+			$idPraticien=$_REQUEST['idPraticien'];
+			$pdo->supprimerPraticienVisiteur($idVisiteur,$idPraticien);
+			header('Location: index.php?uc=responsable&action=voirAffectation');
 			break;
 		}
 	}

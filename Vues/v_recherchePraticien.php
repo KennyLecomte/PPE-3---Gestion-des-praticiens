@@ -3,7 +3,7 @@
   <div class="col-md-3"></div>
   <div class="col-md-6">
     <div class="input-group">
-      <form action="index.php?uc=praticien&action=confirmRecherchePraticien" method="post">
+      <form action="index.php?uc=responsable&action=confirmRecherchePraticien" method="post">
         <input list="praticiens" type="text" placeholder="Nom Praticien" name="nomPraticien" autocomplete="off" required>
         <datalist id="praticiens">
            <?php

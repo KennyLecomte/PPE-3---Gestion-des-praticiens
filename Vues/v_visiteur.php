@@ -14,11 +14,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-  		<li><a href="index.php?uc=gestionPraticiens&action=voirPraticiens">Voir vos praticiens</a></li>
-  		<li><a href="index.php?uc=ajoutVisite&action=formulaireVisite">Ajouter une visite</a></li>
-  		<li><a href="index.php?uc=gestionPraticiens&action=FormulairePraticien">Voir les praticiens</a></li>
-  		<li><a href="index.php?uc=gestionPraticiens&action=RechercheNotoriete">Rechercher par notoriété</a></li>
-  		<li><a href="index.php?uc=gestionPraticiens&action=RechercheSpecialite">Rechercher par spécialité</a></li>
+  		<li><a href="index.php?uc=visiteur&action=voirPraticiens">Voir vos praticiens</a></li>
+  		<li><a href="index.php?uc=visiteur&action=ajouterVisite">Ajouter une visite</a></li>
+  		<li><a href="index.php?uc=visiteur&action=recherchePraticien">Voir les praticiens</a></li>
+  		<li><a href="index.php?uc=visiteur&action=rechercheNotoriete">Rechercher par notoriété</a></li>
+  		<li><a href="index.php?uc=visiteur&action=rechercheSpecialite">Rechercher par spécialité</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <a href="index.php?uc=deconnexion" type="button" class="btn btn-default navbar-btn">Déconnexion</a>

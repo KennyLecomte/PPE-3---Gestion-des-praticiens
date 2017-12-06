@@ -19,14 +19,14 @@
                         <tr>
                             <td><?php echo $nom ?></td>
                             <td><?php echo $prenom ?></td>
-                            <td width=30><a href=index.php?uc=gestionPraticiens&action=supprimerAffectation&id=<?php echo $id ?>>Supprimer</a></td>
+                            <td width=30><a href=index.php?uc=visiteur&action=supprimerAffectation&id=<?php echo $id ?>>Supprimer</a></td>
                             </tr>
                     <?php 
                         }
                     ?> 
                 </table>
             </div>
-            <a class="btn btn-lg btn-primary btn-block" href="index.php?uc=gestionPraticiens&action=ajoutPraticienVisiteur">Ajouter une affectation</a>
+            <a class="btn btn-lg btn-primary btn-block" href="index.php?uc=visiteur&action=ajoutAffectationVisiteur">Ajouter une affectation</a>
         </div>
     </div>
 </div>

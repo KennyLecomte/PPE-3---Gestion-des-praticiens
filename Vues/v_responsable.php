@@ -17,28 +17,28 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Visiteur <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="index.php?uc=gestionPraticiens&action=voirPraticiens">Voir vos praticiens</a></li>
-            <li><a href="index.php?uc=gestionPraticiens&action=FormulairePraticien">Recherche d'un praticien</a></li>
-            <li><a href="index.php?uc=gestionPraticiens&action=RechercheNotoriete">Rechercher par notoriété</a></li>
-      <li><a href="index.php?uc=gestionPraticiens&action=RechercheSpecialite">Rechercher par spécialité</a></li>
-            <li><a href="index.php?uc=ajoutVisite&action=formulaireVisite">Ajouter une visite</a></li>
+            <li><a href="index.php?uc=visiteur&action=voirPraticiens">Voir vos praticiens</a></li>
+            <li><a href="index.php?uc=visiteur&action=recherchePraticien">Recherche d'un praticien</a></li>
+            <li><a href="index.php?uc=visiteur&action=rechercheNotoriete">Rechercher par notoriété</a></li>
+      <li><a href="index.php?uc=visiteur&action=rechercheSpecialite">Rechercher par spécialité</a></li>
+            <li><a href="index.php?uc=visiteur&action=ajouterVisite">Ajouter une visite</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Responsable <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="index.php?uc=praticien&action=ajouterSpecialite">Ajouter une spécialité</a></li>
-            <li><a href="index.php?uc=affectation&action=voirAffectation">Voir affectations</a></li>
-            <li><a href="index.php?uc=praticien&action=vueAjouterPraticien">Ajout d'un praticien</a></li>
+            <li><a href="index.php?uc=responsable&action=ajouterSpecialite">Ajouter une spécialité</a></li>
+            <li><a href="index.php?uc=responsable&action=voirAffectation">Voir affectations</a></li>
+            <li><a href="index.php?uc=responsable&action=vueAjouterPraticien">Ajout d'un praticien</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recherches <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="index.php?uc=praticien&action=recherchePraticien">Recherche par praticien</a></li>
-            <li><a href="index.php?uc=praticien&action=rechercheVisiteur">Recherche par visiteur</a></li>
-            <li><a href="index.php?uc=praticien&action=rechercheDate">Recherche par date</a></li>
-            <li><a href="index.php?uc=praticien&action=rechercheRegion">Recherche par région</a></li>
+            <li><a href="index.php?uc=responsable&action=recherchePraticien">Recherche par praticien</a></li>
+            <li><a href="index.php?uc=responsable&action=rechercheVisiteur">Recherche par visiteur</a></li>
+            <li><a href="index.php?uc=responsable&action=rechercheDate">Recherche par date</a></li>
+            <li><a href="index.php?uc=responsable&action=rechercheRegion">Recherche par région</a></li>
           </ul>
         </li>
       </ul>

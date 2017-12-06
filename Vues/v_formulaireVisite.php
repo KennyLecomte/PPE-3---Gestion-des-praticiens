@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-3">
-      <form action="index.php?uc=ajoutVisite&action=confirmerVisite" method="post">
+      <form action="index.php?uc=visiteur&action=confirmAjoutVisite" method="post">
       	 <select name="idPraticien" size="1" class="form-control">
             <?php
             $ligne = $praticien->fetch();

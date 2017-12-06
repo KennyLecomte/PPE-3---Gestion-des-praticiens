@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-md-5"></div>
   <div class="col-md-2">
-    <form action="index.php?uc=gestionPraticiens&action=confirmAjoutPraticienVisiteur" method="post">
+    <form action="index.php?uc=visiteur&action=confirmAjoutAffectationVisiteur" method="post">
       <div class="form-group">
         <select name="idPraticien" size="1" class="form-control">
             <?php
