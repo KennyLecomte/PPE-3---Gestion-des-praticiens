@@ -16,9 +16,9 @@
             }
             ?>
       	</select><br>
-      	<input type="date" placeholder="Date de Visite" name="dateVisite" class="form-control"><br>
-      	<textarea type="text" placeholder="Bilan de visite" name="bilanVisite" class="form-control"></textarea><br>
-      	<textarea type="text" placeholder="Motif de la visite" name="motifVisite" class="form-control"></textarea><br>
+      	<input type="date" placeholder="Date de Visite" name="dateVisite" class="form-control" required><br>
+      	<textarea type="text" placeholder="Bilan de visite" name="bilanVisite" class="form-control" required></textarea><br>
+      	<textarea type="text" placeholder="Motif de la visite" name="motifVisite" class="form-control" required></textarea><br>
       	<input type="submit" value ="VALIDER" class="btn btn-lg btn-primary btn-block">
       </form>
     </div>

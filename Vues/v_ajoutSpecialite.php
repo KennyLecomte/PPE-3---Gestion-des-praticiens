@@ -6,9 +6,9 @@
 			<form action="index.php?uc=praticien&action=confirmAjoutSpecialite" method="post">
 			  <div class="form-group">
 			    <label>Identifiant</label>
-			    <input type="text" class="form-control" placeholder="Identifiant" name="idSpecialite" maxlength="3">
+			    <input type="text" class="form-control" placeholder="Identifiant" name="idSpecialite" maxlength="3" required>
 			    <label>Spécialité</label>
-			    <input type="text" class="form-control" placeholder="Spécialité" name="nomSpecialite">
+			    <input type="text" class="form-control" placeholder="Spécialité" name="nomSpecialite" required>
 				</br>
 			    <button type="submit" class="btn btn-default">Ajouter</button>
 			   </div>

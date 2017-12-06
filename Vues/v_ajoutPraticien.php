@@ -4,15 +4,15 @@
 		<div class="col-md-3">
 			<form action="index.php?uc=praticien&action=ajouterPraticien" method="post">
 				<br>
-				<input type="text" class="form-control" placeholder="Nom" name="nomPraticien" class="formAjoutPraticien">
+				<input type="text" class="form-control" placeholder="Nom" name="nomPraticien" class="formAjoutPraticien" required>
 				<br>
-				<input type="text" class="form-control" placeholder="Prenom" name="prenomPraticien" class="formAjoutPraticien">
+				<input type="text" class="form-control" placeholder="Prenom" name="prenomPraticien" class="formAjoutPraticien" required>
 				<br>
-				<input type="text" class="form-control" placeholder="Ville" name="villePraticien" class="formAjoutPraticien">
+				<input type="text" class="form-control" placeholder="Ville" name="villePraticien" class="formAjoutPraticien" required>
 				<br>
-				<input type="text" class="form-control" placeholder="Adresse" name="adressePraticien" class="formAjoutPraticien">
+				<input type="text" class="form-control" placeholder="Adresse" name="adressePraticien" class="formAjoutPraticien" required>
 				<br>
-				<input type="text" class="form-control" placeholder="Code postal" name="cpPraticien" class="formAjoutPraticien">
+				<input type="text" class="form-control" placeholder="Code postal" name="cpPraticien" class="formAjoutPraticien" required>
 				<br>
 				<select name="idRegion" class="form-control" size="1">
 			      <?php
@@ -29,7 +29,7 @@
 			      ?>
 				</select>
 				<br>
-				<input type="text" class="form-control" placeholder="Notoriété" name="notorietePraticien" class="formAjoutPraticien">
+				<input type="text" class="form-control" placeholder="Notoriété" name="notorietePraticien" class="formAjoutPraticien" required>
 				<br>
 				<input type="submit" class="btn btn-lg btn-primary btn-block" value ="Ajouter">
 			</form>
