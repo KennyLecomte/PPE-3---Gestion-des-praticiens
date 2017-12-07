@@ -60,7 +60,15 @@
 		{
 			$nomPraticien = $_POST["nomPraticien"];
 			$results=$pdo->getVisiteursPraticien($nomPraticien);
-			include("vues/v_visiteursPraticien.php");
+			if (empty($results))
+			{
+				$message="Le praticien n'a pas de visiteurs !";
+				include("vues/v_message.php");
+			}
+			else
+			{
+				include("vues/v_visiteursPraticien.php");
+			}
 			break;
 		}
 
@@ -76,7 +84,15 @@
 		{
 			$nomVisiteur = $_POST["nomVisiteur"];
 			$results=$pdo->getPraticiensVisiteurNom($nomVisiteur);
-			include("vues/v_praticiensVisiteurRecherche.php");
+			if (empty($results))
+			{
+				$message="Le visiteur n'a pas de praticiens !";
+				include("vues/v_message.php");
+			}
+			else
+			{
+				include("vues/v_praticiensVisiteurRecherche.php");
+			}
 			break;
 		}
 
@@ -90,7 +106,15 @@
 		{
 			$dateVisite = $_POST["dateVisite"];
 			$results=$pdo->getVisitesDate($dateVisite);
-			include("vues/v_visitesDate.php");
+			if (empty($results))
+			{
+				$message="Il n'y a pas de visites à cette date !";
+				include("vues/v_message.php");
+			}
+			else
+			{
+				include("vues/v_visitesDate.php");
+			}
 			break;
 		}
 
@@ -105,7 +129,15 @@
 		{
 			$idRegion = $_POST["idRegion"];
 			$results=$pdo->getPraticiensRegion($idRegion);
-			include("vues/v_praticiensRegion.php");
+			if (empty($results))
+			{
+				$message="Il n'y a pas de praticiens dans cette région !";
+				include("vues/v_message.php");
+			}
+			else
+			{
+				include("vues/v_praticiensRegion.php");
+			}
 			break;
 		}
 
