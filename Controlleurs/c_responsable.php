@@ -27,7 +27,8 @@
 			$adressePraticien=$_POST["adressePraticien"];
 			$notorietePraticien=$_POST["notorietePraticien"];
 			$pdo->ajouterPraticien($idRegion, $nomPraticien, $prenomPraticien, $villePraticien, $adressePraticien, $cpPraticien, $notorietePraticien);
-			header('Location: index.php?uc=accueil');
+			$message="Votre nouveau praticien $prenomPraticien $nomPraticien a bien été ajouté !";
+			include("vues/v_message.php");
 			break;
 		}
 
@@ -42,7 +43,8 @@
 			$idSpecialite=$_POST["idSpecialite"];
 			$nomSpecialite = $_POST["nomSpecialite"];
 			$pdo->ajouterSpecialite($idSpecialite, $nomSpecialite);
-			echo "Votre nouvelle spécialité '$nomSpecialite' a bien été ajoutée !";
+			$message="Votre nouvelle spécialité $nomSpecialite a bien été ajoutée !";
+			include("vues/v_message.php");
 			break;
 		}
 

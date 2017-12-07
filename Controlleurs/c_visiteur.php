@@ -18,7 +18,10 @@ switch ($action) {
 
 	case 'ajoutAffectationVisiteur':
 
-		$praticien=$pdo->getPraticien();
+		$leVisiteur=$pdo->getRegionVisiteur($_SESSION['idVisiteur']);
+		$regionVisiteur=$leVisiteur['idRegion'];
+
+		$praticien=$pdo->getPraticiensRegionSelect($regionVisiteur);
 
 		include("vues/v_ajoutAffectationVisiteur.php");
 

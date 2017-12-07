@@ -176,6 +176,13 @@ class PdoLBC
 		return $lesLignes;
 	}
 
+	public function getPraticiensRegionSelect($idRegion)
+	{
+		$req = "SELECT NOMPRATICIEN, PRENOMPRATICIEN, NOMREGION FROM praticien, region WHERE region.idRegion=praticien.idRegion AND praticien.idRegion='$idRegion'";
+		$res = PdoLBC::$monPdo->query($req);
+		return $res;
+	}
+
 	public function getLesVisiteursDuPraticien($idPraticien)
 	{
 		$req = "SELECT visiteur.NOMVISITEUR, visiteur.PRENOMVISITEUR FROM `praticien`, `visiteur`, `attribuer` 
