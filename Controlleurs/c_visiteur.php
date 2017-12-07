@@ -47,7 +47,7 @@ switch ($action) {
 		$idPraticien = $_POST["idPraticien"];
 		$lePraticien=$pdo->getInfosPraticien($idPraticien);
 		$regionPraticien=$lePraticien['IDREGION'];
-
+		 var_dump($idPraticien);
 		if($regionVisiteur==$regionPraticien)
 		{
 			$pdo->ajouterAffectation($idPraticien,$idVisiteur);

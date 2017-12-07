@@ -32,7 +32,13 @@ $pdo = PdoLBC::getPdoLBC();
 switch($uc)
 {
 	case 'accueil':
-		{include("vues/v_accueil.php");break;}		
+		{
+			if(isset($_SESSION['idVisiteur']))
+			{
+				include("vues/v_accueil.php");
+				break;
+			}
+		}		
 	case 'responsable' :
 		{include("Controlleurs/c_responsable.php");break;}
 	case 'connexion' :
