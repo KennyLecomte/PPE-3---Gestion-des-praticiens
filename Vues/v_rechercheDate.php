@@ -2,6 +2,7 @@
 <div class="row">
   <div class="col-md-3"></div>
   <div class="col-md-6">
+  	<h3>Recherche par date</h3>
     <div class="input-group">
       <form action="index.php?uc=responsable&action=confirmRechercheDate" method="post">
         <input type="date" name="dateVisite" autocomplete="off" required>

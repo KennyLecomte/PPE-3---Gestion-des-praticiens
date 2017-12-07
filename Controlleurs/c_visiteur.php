@@ -12,7 +12,15 @@ switch ($action) {
 
 		$lesPraticiens=$pdo->getPraticiensVisiteur($idVisiteur);
 
-		include("vues/v_PraticiensVisiteur.php");
+		if (empty($lesPraticiens))
+			{
+				$message="Vous n'avez pas de praticiens !";
+				include("vues/v_message.php");
+			}
+			else
+			{
+				include("vues/v_PraticiensVisiteur.php");
+			}
 
 		break;
 
@@ -52,7 +60,8 @@ switch ($action) {
 
 		break;
 
-	case 'supprimerAffectation':
+		case 'supprimerAffectation':
+	
 
 		$loginVisiteur=$_SESSION['loginVisiteur'];
 		$leVisiteur=$pdo->getVisiteurLogin($loginVisiteur);
@@ -65,6 +74,7 @@ switch ($action) {
 		header('Location: index.php?uc=visiteur&action=voirPraticiens');
 
 		break;
+	
 
 		case 'recherchePraticien':
 
@@ -119,7 +129,8 @@ switch ($action) {
 		$matriculeVisiteur=$Visiteur['MATRICULEVISITEUR'];
 
 		$pdo->ajoutVisite($idPraticien, $matriculeVisiteur, $dateVisite, $bilanVisite, $motifVisite);
-		header('Location: index.php?uc=accueil');
+		$message="Votre visite a bien été ajoutée";
+		include("vues/v_message.php");
 		break;
 	}
 }

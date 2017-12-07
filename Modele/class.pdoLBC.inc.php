@@ -150,7 +150,6 @@ class PdoLBC
  	public function supprimerPraticienVisiteur($idVisiteur,$idPraticien)
 	{
 		$req="DELETE FROM attribuer WHERE matriculeVisiteur='$idVisiteur' AND idPraticien='$idPraticien'";
-		echo $req;
 		$res = PdoLBC::$monPdo->exec($req);
 	}
 
@@ -178,9 +177,10 @@ class PdoLBC
 
 	public function getPraticiensRegionSelect($idRegion)
 	{
-		$req = "SELECT NOMPRATICIEN, PRENOMPRATICIEN, NOMREGION FROM praticien, region WHERE region.idRegion=praticien.idRegion AND praticien.idRegion='$idRegion'";
+		$req = "SELECT NOMPRATICIEN, PRENOMPRATICIEN, NOMREGION, IDPRATICIEN FROM praticien, region WHERE region.idRegion=praticien.idRegion AND praticien.idRegion='$idRegion'";
 		$res = PdoLBC::$monPdo->query($req);
 		return $res;
+
 	}
 
 	public function getLesVisiteursDuPraticien($idPraticien)

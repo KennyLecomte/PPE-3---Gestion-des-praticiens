@@ -3,6 +3,7 @@
 <div class="row">
   <div class="col-md-4"></div>
   <div class="col-md-3">
+      <h3>Ajout d'un responsable</h3>
       <form action="index.php?uc=responsable&action=confirmAjouterResponsable" method="post">
         <input list="visiteurs" type="text" placeholder="Nom Visiteur" name="nomVisiteur" autocomplete="off" required class="form-control">
         <datalist id="visiteurs">

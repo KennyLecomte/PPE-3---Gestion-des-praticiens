@@ -2,6 +2,7 @@
 	<div class="row">
 		<div class="col-md-4"></div>
 		<div class="col-md-3">
+			<h3>Ajout d'un praticien</h3>
 			<form action="index.php?uc=responsable&action=ajouterPraticien" method="post">
 				<br>
 				<input type="text" class="form-control" placeholder="Nom" name="nomPraticien" class="formAjoutPraticien" required>

@@ -1,7 +1,10 @@
+
+
 <div class="container">
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-3">
+      <h3>Ajout d'une visite</h3>
       <form action="index.php?uc=visiteur&action=confirmAjoutVisite" method="post">
       	 <select name="idPraticien" size="1" class="form-control">
            

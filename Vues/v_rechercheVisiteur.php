@@ -2,6 +2,7 @@
 <div class="row">
   <div class="col-md-3"></div>
   <div class="col-md-6">
+    <h3>Recherche par visiteur</h3>
     <div class="input-group">
       <form action="index.php?uc=responsable&action=confirmRechercheVisiteur" method="post">
         <input list="visiteurs" type="text" placeholder="Nom Visiteur" name="nomVisiteur" autocomplete="off" required>

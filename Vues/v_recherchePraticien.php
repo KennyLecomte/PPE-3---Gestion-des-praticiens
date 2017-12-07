@@ -2,6 +2,7 @@
 <div class="row">
   <div class="col-md-3"></div>
   <div class="col-md-6">
+    <h3>Recherche par praticien</h3>
     <div class="input-group">
       <form action="index.php?uc=responsable&action=confirmRecherchePraticien" method="post">
         <input list="praticiens" type="text" placeholder="Nom Praticien" name="nomPraticien" autocomplete="off" required>
