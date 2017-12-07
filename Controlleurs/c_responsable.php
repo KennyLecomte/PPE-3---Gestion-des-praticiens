@@ -178,7 +178,7 @@
 		case 'vueAjouterResponsable' :
 		{
 			$vide=" ";
-			$reponse=$pdo->getVisiteur();
+			$reponse=$pdo->getVisiteurNonResponsable();
 			$secteur=$pdo->getSecteurs();
 			include("vues/v_ajouterResponsable.php");
 			break;
@@ -191,7 +191,8 @@
 			$matriculeVisiteur=$results["MATRICULEVISITEUR"];
 			$idSecteur=$_POST["idSecteur"];
 			$pdo->ajouterResponsable($matriculeVisiteur, $idSecteur);
-			header('Location:index.php?uc=accueil');
+			$message="Votre nouveau responsable $nomVisiteur a bien été ajouté !";
+			include("vues/v_message.php");
 			break;
 		}
 	}

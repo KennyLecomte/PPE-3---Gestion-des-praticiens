@@ -12,15 +12,7 @@ switch ($action) {
 
 		$lesPraticiens=$pdo->getPraticiensVisiteur($idVisiteur);
 
-		if (empty($lesPraticiens))
-			{
-				$message="Vous n'avez pas de praticiens !";
-				include("vues/v_message.php");
-			}
-			else
-			{
-				include("vues/v_PraticiensVisiteur.php");
-			}
+		include("vues/v_PraticiensVisiteur.php");
 
 		break;
 
@@ -31,7 +23,17 @@ switch ($action) {
 
 		$praticien=$pdo->getPraticiensRegionSelect($regionVisiteur);
 
-		include("vues/v_ajoutAffectationVisiteur.php");
+		
+
+		if (empty($praticien))
+			{
+				$message="Il n'y a pas de praticiens dans votre région !";
+				include("vues/v_message.php");
+			}
+			else
+			{
+				include("vues/v_ajoutAffectationVisiteur.php");
+			}
 
 		break;
 

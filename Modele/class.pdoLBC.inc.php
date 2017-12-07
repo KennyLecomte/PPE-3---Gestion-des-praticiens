@@ -242,5 +242,12 @@ class PdoLBC
 		$req="INSERT INTO responsable(MATRICULEVISITEUR, IDSECTEUR) VALUES('$matriculeVisiteur', '$idSecteur')";
 		$res = PdoLBC::$monPdo->exec($req);
 	}
+
+	public function getVisiteurNonResponsable()
+  	{
+	    $req = "SELECT * FROM visiteur WHERE MATRICULEVISITEUR NOT IN(SELECT MATRICULEVISITEUR FROM responsable)";
+	    $res = PdoLBC::$monPdo->query($req);
+	    return $res;
+ 	}
 }
 ?>
