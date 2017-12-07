@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once("modele/class.pdoLBC.inc.php");
+require_once("Modele/class.pdoLBC.inc.php");
 
 include("vues/v_entete.php");
 
