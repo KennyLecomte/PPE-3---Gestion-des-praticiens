@@ -12,7 +12,7 @@ switch ($action) {
 
 		$lesPraticiens=$pdo->getPraticiensVisiteur($idVisiteur);
 
-		include("vues/v_PraticiensVisiteur.php");
+		include("vues/v_praticiensVisiteur.php");
 
 		break;
 
@@ -81,7 +81,7 @@ switch ($action) {
 		case 'recherchePraticien':
 
 		$praticien=$pdo->getPraticien();
-		include("vues/v_FormulairePraticien.php");
+		include("vues/v_formulairePraticien.php");
 		break;
 
 		case 'voirInfosPraticien':
