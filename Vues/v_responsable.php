@@ -30,6 +30,7 @@
             <li><a href="index.php?uc=responsable&action=ajouterSpecialite">Ajouter une spécialité</a></li>
             <li><a href="index.php?uc=responsable&action=voirAffectation">Voir affectations</a></li>
             <li><a href="index.php?uc=responsable&action=vueAjouterPraticien">Ajout d'un praticien</a></li>
+            <li><a href="index.php?uc=responsable&action=vueAjouterResponsable">Ajout d'un responsable</a></li>
           </ul>
         </li>
         <li class="dropdown">

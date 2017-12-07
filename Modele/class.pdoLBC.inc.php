@@ -66,6 +66,14 @@ class PdoLBC
 		return $lesLignes;
 	}
 
+	public function getVisiteurNom($nomVisiteur)
+	{
+		$req = "SELECT * FROM visiteur WHERE CONCAT(NOMVISITEUR, ' ',PRENOMVISITEUR)='$nomVisiteur'";
+		$res = PdoLBC::$monPdo->query($req);
+		$lesLignes = $res->fetch();
+		return $lesLignes;
+	}
+
 	public function getVisiteursPraticien($nomPraticien)
 	{
 		$req = "SELECT NOMPRATICIEN, PRENOMPRATICIEN, NOMVISITEUR, PRENOMVISITEUR FROM praticien, attribuer, visiteur WHERE attribuer.idPraticien=praticien.idPraticien AND attribuer.matriculeVisiteur=visiteur.matriculeVisiteur AND CONCAT(NOMPRATICIEN, ' ',PRENOMPRATICIEN)='$nomPraticien'";
@@ -213,6 +221,19 @@ class PdoLBC
 		$res = PdoLBC::$monPdo->query($req);
 		$lesLignes = $res->fetch();
 		return $lesLignes;
+	}
+
+	public function getSecteurs()
+	{
+		$req = "SELECT * FROM secteur";
+	    $res = PdoLBC::$monPdo->query($req);
+	    return $res;
+	}
+
+	public function ajouterResponsable($matriculeVisiteur, $idSecteur)
+	{
+		$req="INSERT INTO responsable(MATRICULEVISITEUR, IDSECTEUR) VALUES('$matriculeVisiteur', '$idSecteur')";
+		$res = PdoLBC::$monPdo->exec($req);
 	}
 }
 ?>

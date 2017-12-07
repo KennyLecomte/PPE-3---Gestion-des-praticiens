@@ -140,5 +140,25 @@
 			header('Location: index.php?uc=responsable&action=voirAffectation');
 			break;
 		}
+
+		case 'vueAjouterResponsable' :
+		{
+			$vide=" ";
+			$reponse=$pdo->getVisiteur();
+			$secteur=$pdo->getSecteurs();
+			include("vues/v_ajouterResponsable.php");
+			break;
+		}
+
+		case 'confirmAjouterResponsable':
+		{
+			$nomVisiteur = $_POST["nomVisiteur"];
+			$results=$pdo->getVisiteurNom($nomVisiteur);
+			$matriculeVisiteur=$results["MATRICULEVISITEUR"];
+			$idSecteur=$_POST["idSecteur"];
+			$pdo->ajouterResponsable($matriculeVisiteur, $idSecteur);
+			header('Location:index.php?uc=accueil');
+			break;
+		}
 	}
 ?>
