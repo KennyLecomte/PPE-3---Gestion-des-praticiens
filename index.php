@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once("Modele/class.pdoLBC.inc.php");
+require_once("modele/class.pdoLBC.inc.php");
 
 include("vues/v_entete.php");
 
@@ -13,18 +13,18 @@ else
 
 if(!isset($_SESSION['idVisiteur']))
 {
-	include("vues/v_ChampConnexion.php");
+	include("vues/v_champConnexion.php");
 }
 
 if(isset($_SESSION['idVisiteur']))
 {
 	if($_SESSION['typeVisiteur']=="Visiteur")
 	{
-		include("Vues/v_visiteur.php");
+		include("vues/v_visiteur.php");
 	}
 	elseif ($_SESSION['typeVisiteur']=="Responsable") 
 	{
-		include("Vues/v_responsable.php");
+		include("vues/v_responsable.php");
 	}
 }
 
@@ -40,15 +40,15 @@ switch($uc)
 			}
 		}		
 	case 'responsable' :
-		{include("Controlleurs/c_responsable.php");break;}
+		{include("controlleurs/c_responsable.php");break;}
 	case 'connexion' :
-		{include("Controlleurs/c_connexion.php");break;}
+		{include("controlleurs/c_connexion.php");break;}
 	case 'deconnexion' :
-		{include("Controlleurs/c_Deconnexion.php");break;}
+		{include("controlleurs/c_deconnexion.php");break;}
 	case 'inscription' :
-		{ include("Controlleurs/c_Inscription.php");break; }
+		{ include("controlleurs/c_inscription.php");break; }
 	case 'visiteur' :
-		{ include("Controlleurs/c_visiteur.php");break; }
+		{ include("controlleurs/c_visiteur.php");break; }
 
 
 }
