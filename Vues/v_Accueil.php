@@ -15,11 +15,11 @@
       </div>
 
       <div class="item">
-        <img src="Images/logoLBC.png" alt="Logo" style="width:100%;">
+        <img src="Images/logo.jpg" alt="Logo" style="width:100%;">
       </div>
     
       <div class="item">
-        <img src="Images/eprouvette.jpg" alt="Laboratoire" style="width:100%;">
+        <img src="Images/labo.jpg" alt="Laboratoire" style="width:100%;">
       </div>
     </div>
 
