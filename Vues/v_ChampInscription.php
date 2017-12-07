@@ -24,7 +24,7 @@
 			      }
 			      ?>
 				</select>
-				<input type="date" name="dateEmbaucheVisiteur" class="form-control" required autofocus autocomplete="off">
+				<input type="date" name="dateEmbaucheVisiteur" class="form-control" required autofocus autocomplete="off" title="Date d'embauche">
 				<input type="password" name="mdpVisiteur" class="form-control" placeholder="Mot de passe" required autofocus autocomplete="off">
 				<button class="btn btn-lg btn-primary btn-block" type="submit">Valider</button>
 			</form>

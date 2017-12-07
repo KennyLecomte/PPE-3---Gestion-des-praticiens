@@ -93,7 +93,7 @@ switch ($action) {
 
 		case 'ajouterVisite':
 	{
-		$praticien=$pdo->getPraticien();
+		$praticiens=$pdo->getPraticiensVisiteur($_SESSION['idVisiteur']);
 		include("vues/v_formulaireVisite.php");
 	  	break;
 	}
